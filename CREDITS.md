@@ -1,3 +1,5 @@
 # Crédits
 
-TripSafe RdR s'appuie sur le Manuel de Réduction des Risques de la Société Psychédélique Française et sur la matrice d'interactions SPF/TripSit. L'application est un outil pédagogique de réduction des risques, pas une incitation à la consommation.
+TripSafe RdR v14.2 — outil pédagogique de biologie et de réduction des risques.
+
+Sources éditoriales principales : manuel SPF de réduction des risques et spécifications produit internes fournies au fil des versions.

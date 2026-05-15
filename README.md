@@ -1,15 +1,16 @@
-# TripSafe RdR v14.1
+# TripSafe RdR v14.2
 
-PWA mobile standalone de pédagogie biologique et de réduction des risques. Données locales uniquement, sans compte ni serveur.
+Package GitHub Pages prêt à publier.
 
-## Déploiement GitHub Pages
+## Publication rapide
 
-1. Créer un dépôt GitHub.
-2. Déposer tout le contenu de ce dossier à la racine du dépôt.
-3. Aller dans **Settings > Pages**.
-4. Choisir **Deploy from a branch** puis `main` / `/root`, ou utiliser le workflow GitHub Actions inclus.
-5. Ouvrir l'URL GitHub Pages sur mobile puis **Ajouter à l'écran d'accueil**.
+1. Crée un dépôt GitHub.
+2. Dépose tout le contenu de ce dossier à la racine du dépôt.
+3. Active GitHub Pages dans Settings → Pages.
+4. Source : `main` / `/root`, ou utilise le workflow GitHub Actions inclus.
 
-## Correction v14.1
+## Correction v14.2
 
-Le formulaire complet de Suivi ne se referme plus pendant la saisie de la quantité. Les champs numériques et notes mettent à jour l'état local sans reconstruire l'interface à chaque frappe ; le rendu complet se fait au changement/blur avec restauration des blocs ouverts.
+Cette version réduit automatiquement l’en-tête de consultation Doc pendant le scroll : le nom de la substance, la classe et la voie restent visibles, mais l’encart occupe beaucoup moins de place.
+
+Les données restent locales au navigateur du téléphone.

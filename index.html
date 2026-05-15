@@ -7,7 +7,7 @@
   <meta name="description" content="TripSafe — Comprendre la biologie de 6 substances, leurs interactions et leur récupération. Outil pédagogique de réduction des risques. Données locales uniquement.">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
-  <title>TripSafe — Biologie des substances, réduction des risques · v14</title>
+  <title>TripSafe — Biologie des substances, réduction des risques · v14.2</title>
   <style>:root {
   --bg: #090d1a;
   --bg2: #0f172a;
@@ -985,6 +985,73 @@ abbr.gloss { text-decoration-thickness: 2px; text-decoration-color: color-mix(in
 .session-full-details input:focus,
 .session-full-details textarea:focus,
 .session-full-details select:focus { border-color: rgba(99,102,241,.68); box-shadow: 0 0 0 3px rgba(99,102,241,.14); }
+
+
+/* ===== v14.2 corrections : header Doc compact au scroll ===== */
+.doc-header { transition: padding .18s ease, border-radius .18s ease, min-height .18s ease, box-shadow .18s ease; }
+.doc-header h1, .doc-header p, .route-pill, .topbar, .brand b, .brand small, .logo-orb, .expert-toggle, .lang-toggle, .top-actions .icon-btn, .sos-mini { transition: all .18s ease; }
+body.doc-compact .topbar { padding: 6px 0 6px; gap: 6px; }
+body.doc-compact .brand { min-height: 38px; gap: 7px; }
+body.doc-compact .logo-orb { width: 34px; height: 34px; border-radius: 13px; box-shadow: 0 8px 24px rgba(99,102,241,.28); }
+body.doc-compact .logo-orb span { width: 15px; height: 15px; border-width: 2px; }
+body.doc-compact .brand b { font-size: 13px; max-width: 72px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+body.doc-compact .brand small { display: none; }
+body.doc-compact .top-actions { gap: 5px; }
+body.doc-compact .top-actions .icon-btn,
+body.doc-compact .sos-mini { min-height: 38px; height: 38px; border-radius: 999px; }
+body.doc-compact .lang-toggle { width: 38px; font-size: 11px; }
+body.doc-compact .expert-toggle { min-width: 38px; max-width: 44px; padding: 0; font-size: 0; overflow: hidden; }
+body.doc-compact .expert-toggle::before { content: '🔬'; font-size: 15px; line-height: 1; }
+body.doc-compact .sos-mini { min-width: 46px; padding: 0 9px; font-size: 12px; }
+body.doc-compact .doc-header {
+  top: 50px;
+  padding: 8px 10px;
+  min-height: 62px;
+  border-radius: 18px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 16px 46px rgba(0,0,0,.28);
+}
+body.doc-compact .doc-header > div { display: grid; gap: 2px; min-width: 0; }
+body.doc-compact .doc-header .back-chip { display: none; }
+body.doc-compact .doc-header h1 {
+  margin: 0;
+  font-size: clamp(18px, 5.4vw, 24px);
+  line-height: 1.02;
+  letter-spacing: -.045em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+body.doc-compact .doc-header p {
+  font-size: 11px;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+body.doc-compact .doc-header .route-pill {
+  min-height: 30px;
+  padding: 4px 9px;
+  font-size: 11px;
+  align-self: center;
+  max-width: 110px;
+}
+body.doc-compact .substance-rail { padding-top: 8px; }
+body.doc-compact .segmented { padding-top: 6px; }
+@media (max-width: 390px) {
+  body.doc-compact .doc-header { top: 50px; padding: 8px 9px; gap: 6px; }
+  body.doc-compact .doc-header .route-pill { max-width: 92px; padding-inline: 8px; }
+  body.doc-compact .brand b { max-width: 58px; }
+}
+@media (max-width: 340px) {
+  body.doc-compact .brand b { display: none; }
+  body.doc-compact .doc-header .route-pill { max-width: 82px; }
+}
 
 </style>
 </head>
@@ -3678,6 +3745,19 @@ abbr.gloss { text-decoration-thickness: 2px; text-decoration-color: color-mix(in
     }, 180);
   }
 
+  let docCompactScrollRAF = null;
+  function updateDocCompact() {
+    const isCompact = state.view === 'doc' && window.scrollY > 118;
+    document.body.classList.toggle('doc-compact', isCompact);
+  }
+  function scheduleDocCompactUpdate() {
+    if (docCompactScrollRAF) return;
+    docCompactScrollRAF = requestAnimationFrame(() => {
+      docCompactScrollRAF = null;
+      updateDocCompact();
+    });
+  }
+
 
 
   function checkContentUpdate() {
@@ -3827,6 +3907,7 @@ abbr.gloss { text-decoration-thickness: 2px; text-decoration-color: color-mix(in
       if (!app) return;
       const htmlOut = '<div class="app-shell">' + renderTopbar() + '<main class="screen enter">' + renderView() + '</main>' + renderBottomNav() + (state.sosOpen ? renderSOS() : '') + (state.installOpen ? renderInstallSheet() : '') + (state.guideOpen ? renderGuideSheet() : '') + (state.disclaimerOpen ? renderDisclaimer() : '') + (state.toast ? renderToast() : '') + (state.glossTooltip ? renderGlossTooltip() : '') + '</div>';
       app.innerHTML = localizeMarkup(htmlOut);
+      updateDocCompact();
     } catch (err) {
       console.error('TripSafe render error:', err);
       const app = document.getElementById('app');
@@ -5177,6 +5258,8 @@ abbr.gloss { text-decoration-thickness: 2px; text-decoration-color: color-mix(in
     window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js').catch(() => {}));
   }
 
+
+  window.addEventListener('scroll', scheduleDocCompactUpdate, { passive: true });
 
   document.addEventListener('click', (e) => {
     const gloss = e.target.closest && e.target.closest('.gloss');
