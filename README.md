@@ -1,25 +1,15 @@
-# TripSafe RdR v8 — package GitHub Pages
+# TripSafe RdR v14.1
 
-PWA mobile standalone de réduction des risques : documentation, session active, interactions, historique local et usage offline après premier chargement.
+PWA mobile standalone de pédagogie biologique et de réduction des risques. Données locales uniquement, sans compte ni serveur.
 
 ## Déploiement GitHub Pages
 
-1. Créer un nouveau dépôt GitHub, par exemple `tripsafe-rdr`.
-2. Déposer tous les fichiers de ce dossier à la racine du dépôt : `index.html`, `manifest.webmanifest`, `service-worker.js`, `icon.svg`, le dossier `icons/` et `.nojekyll`.
+1. Créer un dépôt GitHub.
+2. Déposer tout le contenu de ce dossier à la racine du dépôt.
 3. Aller dans **Settings > Pages**.
-4. Choisir **Deploy from a branch**.
-5. Sélectionner la branche `main` et le dossier `/root`.
-6. Ouvrir l'URL GitHub Pages générée : `https://<compte>.github.io/<repo>/`.
+4. Choisir **Deploy from a branch** puis `main` / `/root`, ou utiliser le workflow GitHub Actions inclus.
+5. Ouvrir l'URL GitHub Pages sur mobile puis **Ajouter à l'écran d'accueil**.
 
-## Installation téléphone
+## Correction v14.1
 
-- iPhone : ouvrir l'URL dans Safari, bouton Partager, puis **Ajouter à l'écran d'accueil**.
-- Android : ouvrir l'URL dans Chrome, puis **Installer l'application** ou **Ajouter à l'écran d'accueil**.
-
-## Données utilisateur
-
-L'historique, les métriques et les sessions restent dans le `localStorage` du navigateur de l'utilisateur. Il n'y a pas de backend, pas de compte, pas de synchronisation et pas d'envoi de données.
-
-## Cadre
-
-Cette app est un outil de réduction des risques à visée pédagogique. Elle ne constitue pas une incitation à consommer, ne remplace pas un avis médical et ne rend jamais une prise sans risque. En cas d'urgence : 112, 15 ou 18.
+Le formulaire complet de Suivi ne se referme plus pendant la saisie de la quantité. Les champs numériques et notes mettent à jour l'état local sans reconstruire l'interface à chaque frappe ; le rendu complet se fait au changement/blur avec restauration des blocs ouverts.
