@@ -1,31 +1,20 @@
-# TripSafe RdR v15.2
+# TripSafe RdR v16 — GitHub Pages
 
-PWA standalone, offline, locale, sans compte ni serveur.
+Version Focus : home par intention, fiches en 60 secondes, modules Neuro en mini-leçons, contenu scientifique complet conservé dans les détails, cockpit Suivi et cache PWA anti-version bloquée.
 
-## Publication GitHub Pages
+## Déploiement
 
-1. Dépose tout le contenu de ce dossier à la racine du repo.
-2. Active GitHub Pages sur `main / root` ou via GitHub Actions.
-3. Garde toujours la même URL, par exemple `https://<compte>.github.io/tripsafe-rdr/`.
-4. Ne crée pas un nouveau sous-dossier par version : l'icône écran d'accueil doit pointer vers la même URL.
+1. Déposer tout le contenu de ce dossier à la racine du repo GitHub.
+2. Activer GitHub Pages sur `main` / root, ou utiliser le workflow inclus.
+3. Ouvrir l’URL HTTPS GitHub Pages sur mobile.
+4. Ajouter à l’écran d’accueil.
 
-## Mise à jour PWA anti-version-collée
+## Mise à jour PWA
 
-v15.2 inclut :
+La PWA utilise `version.json`, un service worker `network-first` pour `index.html`, `skipWaiting()`, `clients.claim()` et un cache versionné `tripsafe-rdr-v16-0-0`.
 
-- `version.json` en no-store via fetch côté app ;
-- `service-worker.js` versionné `tripsafe-rdr-v15-2-0` ;
-- `skipWaiting()` + `clients.claim()` ;
-- suppression automatique des anciens caches `tripsafe-rdr-*` ;
-- stratégie network-first pour `index.html` ;
-- bouton de réparation cache dans l'app.
-
-Si l'icône écran d'accueil reste bloquée sur une ancienne version déjà installée avant v15.2, ouvrir l'app depuis le lien GitHub Pages, puis utiliser `Débloquer le cache`. Une réinstallation unique de l'icône peut être nécessaire pour les très anciennes installations ; après v15.2, le système d'update est prévu pour éviter ce blocage.
+Si l’icône écran d’accueil reste bloquée sur une ancienne version, ouvrir l’app puis utiliser le bouton de mise à jour / déblocage du cache.
 
 ## Confidentialité
 
-Les sessions restent dans le localStorage du téléphone. Aucun backend.
-
-## Urgence
-
-112 / 15 / 18.
+Pas de compte, pas de serveur applicatif, pas de synchronisation. Les sessions et historiques restent dans le stockage local du navigateur de l’utilisateur.

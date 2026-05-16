@@ -4,11 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#090d1a">
-  <meta name="description" content="TripSafe v15.2 — Comprendre la biologie de 6 substances, suivre les prises déclarées, les mélanges, les interactions, la récupération et les mises à jour PWA. Données locales uniquement.">
-  <meta name="tripsafe-version" content="v15.2.0">
+  <meta name="description" content="TripSafe — comprendre vite la biologie des substances, suivre une situation, vérifier les interactions et accompagner quelqu’un. Données locales uniquement.">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
-  <title>TripSafe — v15.2 Cockpit local de réduction des risques</title>
+  <title>TripSafe — v16 Cockpit local de vigilance et réduction des risques</title>
   <style>:root {
   --bg: #090d1a;
   --bg2: #0f172a;
@@ -1120,7 +1119,7 @@ body.doc-compact .segmented { padding-top: 6px; }
 }
 
 
-/* ===== v15.2 companion mode visibility ===== */
+/* ===== v15.1 companion mode visibility ===== */
 .companion-entry-card {
   margin: 12px 0 16px;
   display: flex;
@@ -1147,49 +1146,153 @@ body.doc-compact .segmented { padding-top: 6px; }
 .companion-page-actions .call-grid { margin: 0; }
 
 
-
-/* ===== v15.2 corrections ===== */
-.pwa-update-banner strong { color: var(--info); }
-.pwa-version-pill { display:inline-flex; align-items:center; min-height:26px; padding:3px 8px; border-radius:999px; border:1px solid var(--line); color:var(--muted); font-size:10px; font-weight:900; }
-.learning-path-card { border:1px solid rgba(99,102,241,.30); background:linear-gradient(135deg, rgba(99,102,241,.10), rgba(8,145,178,.06)), var(--surface); border-radius:22px; padding:14px; margin:10px 0 16px; }
-.learning-path-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:10px; }
-.learning-path-grid button { min-height:48px; border:1px solid var(--line); border-radius:16px; background:var(--surface-2); color:var(--text); font-weight:900; font-size:12px; padding:8px; text-align:left; }
-.why-now-card { border:1px solid rgba(16,185,129,.30); background:rgba(16,185,129,.08); border-radius:16px; padding:10px 12px; margin:10px 0; }
-.why-now-card b { display:block; font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin-bottom:4px; }
-.why-now-card p { margin:0; color:var(--text); font-size:13px; line-height:1.5; }
-.context-glossary-note { border:1px dashed rgba(99,102,241,.45); background:rgba(99,102,241,.08); border-radius:14px; padding:9px 10px; font-size:12px; color:var(--muted); line-height:1.45; }
-.history-insights-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:10px; }
-.history-insight { border:1px solid var(--line); border-radius:16px; padding:10px; background:var(--surface-2); }
-.history-insight b { display:block; font-size:18px; font-family:var(--mono); }
-.history-insight small { display:block; color:var(--muted); font-size:11px; font-weight:900; }
-.recovery-checkin { margin-top:10px; border-top:1px solid var(--line); padding-top:10px; }
-.checkin-row { display:flex; gap:6px; flex-wrap:wrap; margin-top:8px; }
-.checkin-row button { min-height:34px; border-radius:999px; border:1px solid var(--line); background:var(--surface-2); color:var(--text); padding:0 10px; font-size:12px; font-weight:900; }
-.next60-list { display:grid; gap:7px; margin-top:8px; }
-.next60-item { border:1px solid var(--line); border-radius:14px; padding:8px 10px; background:var(--surface-2); font-size:12px; line-height:1.45; }
-.next60-item.warn { border-color:rgba(245,158,11,.35); background:rgba(245,158,11,.10); }
-.next60-item.danger, .next60-item.critical { border-color:rgba(239,68,68,.40); background:rgba(239,68,68,.10); }
-.update-tools-card { border-color:rgba(99,102,241,.35); }
-.add-intake-sticky { position:sticky; top:64px; z-index:18; box-shadow:var(--shadow); }
-.screen { scroll-padding-bottom: 150px; }
-.app-shell { padding-bottom: calc(130px + env(safe-area-inset-bottom)); }
-@media (max-width:390px){ .learning-path-grid,.history-insights-grid { grid-template-columns:1fr; } .pwa-update-banner { top:48px; } }
-
-.prep-card { border-color: rgba(16,185,129,.30); background: linear-gradient(135deg, rgba(16,185,129,.10), rgba(99,102,241,.06)), var(--surface); }
-.prep-list { display:grid; gap:8px; margin-top:10px; }
-.prep-list div { border:1px solid var(--line); border-radius:14px; padding:9px 10px; background:var(--surface-2); font-size:12px; color:var(--text); }
-.history-mini-chart { display:grid; gap:8px; margin-top:10px; }
-.mini-bar-row { display:grid; grid-template-columns:74px 1fr 28px; gap:8px; align-items:center; font-size:12px; }
-.mini-bar-track { height:9px; border-radius:999px; background:var(--surface-2); overflow:hidden; border:1px solid var(--line); }
-.mini-bar-fill { display:block; height:100%; border-radius:inherit; background:linear-gradient(90deg,var(--info),var(--classic)); min-width:2px; }
-.reminder-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
-.reminder-row button { min-height:36px; border-radius:999px; border:1px solid var(--line); background:var(--surface-2); color:var(--text); padding:0 12px; font-weight:900; font-size:12px; }
-.export-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
+/* ===== v16 corrections — anti-cache, cockpit, rétention, pédagogie utile ===== */
+.update-status-card { border-color: rgba(99,102,241,.35); background: linear-gradient(135deg, rgba(99,102,241,.10), rgba(16,185,129,.06)), var(--surface); }
+.learning-paths { display: grid; gap: 10px; margin: 10px 0 18px; }
+.learning-path-card { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 10px; min-height: 64px; text-align: left; border: 1px solid var(--line); border-radius: 18px; background: var(--surface-2); color: var(--text); padding: 12px; cursor: pointer; }
+.learning-path-card i { width: 38px; height: 38px; border-radius: 14px; display: grid; place-items: center; background: rgba(99,102,241,.18); font-style: normal; }
+.learning-path-card b { display: block; font-size: 14px; }
+.learning-path-card small { display: block; color: var(--muted); font-size: 11px; line-height: 1.35; margin-top: 2px; }
+.learning-path-card span:last-child { opacity: .65; font-size: 22px; }
+.why-now-card { border: 1px solid rgba(16,185,129,.28); background: rgba(16,185,129,.08); border-radius: 16px; padding: 11px 12px; margin: 10px 0; }
+.why-now-card b { display:block; font-size: 12px; letter-spacing: .05em; text-transform: uppercase; color: var(--safe); margin-bottom: 4px; }
+.why-now-card p { margin: 0; color: var(--text); font-size: 13px; line-height: 1.5; }
+.next-hour-card { border-color: rgba(99,102,241,.35); background: rgba(99,102,241,.08); }
+.next-hour-list { display: grid; gap: 8px; margin-top: 10px; }
+.next-hour-item { border: 1px solid var(--line); border-radius: 14px; padding: 9px 10px; background: var(--surface-2); }
+.next-hour-item b { display: block; font-size: 13px; }
+.next-hour-item span { display:block; color: var(--muted); font-size: 12px; margin-top: 2px; }
+.checkin-card { border-color: rgba(16,185,129,.32); background: linear-gradient(135deg, rgba(16,185,129,.10), rgba(99,102,241,.06)), var(--surface); }
+.checkin-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+.checkin-grid label { min-width: 0; }
+.checkin-score { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+.checkin-score button { min-height: 34px; min-width: 34px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface-2); color: var(--text); font-weight: 900; cursor: pointer; }
+.recovery-timeline { display: grid; gap: 8px; margin-top: 10px; }
+.recovery-timeline .step { border: 1px solid var(--line); border-radius: 15px; padding: 10px 12px; background: var(--surface-2); }
+.recovery-timeline .step b { display: block; font-size: 13px; }
+.recovery-timeline .step p { margin: 4px 0 0; color: var(--muted); font-size: 12px; line-height: 1.45; }
+.history-insight-grid { display: grid; gap: 8px; margin-top: 10px; }
+.history-insight { border: 1px solid var(--line); border-radius: 15px; padding: 10px 12px; background: var(--surface-2); }
+.history-insight b { display: block; font-size: 13px; }
+.history-insight span { color: var(--muted); font-size: 12px; }
+.export-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.prep-card { border-color: rgba(14,165,233,.32); background: rgba(14,165,233,.08); }
+.uncertainty-pill-row { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
+.session-helper-note { margin-top: 8px; border: 1px dashed rgba(99,102,241,.34); border-radius: 14px; padding: 9px 10px; color: var(--muted); font-size: 12px; line-height: 1.45; }
+.app-shell { scroll-padding-bottom: calc(140px + env(safe-area-inset-bottom)); }
+.screen, .session-active-screen { padding-bottom: calc(150px + env(safe-area-inset-bottom)); }
+@media (max-width: 390px) { .checkin-grid { grid-template-columns: 1fr; } .learning-path-card { grid-template-columns: auto 1fr; } .learning-path-card span:last-child { display: none; } }
 
 
-/* ===== v15.2 GitHub repair visible card ===== */
-.pwa-repair-card { border-color: rgba(99,102,241,.32); }
-.pwa-version-pill { display:inline-flex; min-height:26px; align-items:center; border-radius:999px; padding:4px 8px; border:1px solid var(--line); background:var(--surface-2); font:900 11px var(--mono); color:var(--muted); }
+
+/* ===== v16 focus corrections ===== */
+:root { --focus-radius: 22px; --focus-gap: 12px; }
+body { letter-spacing: -0.005em; }
+p, li, span, button, h1, h2, h3, small, b, .video-script, .action-strip, .plain-item, .body-signal-body {
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: auto;
+}
+h1, h2, h3, .brand b, .substance-card h3, .v16-title, .v16-card-title, .intent-card b {
+  hyphens: none;
+  word-break: normal;
+  overflow-wrap: normal;
+}
+.app-shell { padding-bottom: calc(112px + env(safe-area-inset-bottom)); }
+.topbar { padding: 8px 0 8px; }
+.logo-orb { width: 38px; height: 38px; border-radius: 14px; }
+.logo-orb span { width: 15px; height: 15px; border-width: 2px; }
+.brand { min-height: 40px; gap: 8px; }
+.brand b { font-size: 15px; white-space: nowrap; }
+.brand small { font-size: 10px; white-space: nowrap; }
+.expert-toggle { max-width: 92px; overflow: hidden; text-overflow: ellipsis; }
+.hero.wow-card { min-height: 230px; align-items: stretch; padding: 18px; }
+.hero .orbital { opacity: .45; width: 210px; height: 210px; }
+.hero-copy { display: grid; align-content: end; }
+.hero h1 { font-size: clamp(31px, 9vw, 46px); line-height: .94; letter-spacing: -.065em; max-width: 12ch; }
+.hero p { font-size: 14px; line-height: 1.48; max-width: 32ch; }
+.v16-home { display: grid; gap: 14px; }
+.v16-intent-title { margin: 16px 2px 8px; }
+.v16-intent-title h2 { margin: 0; font-size: 24px; letter-spacing: -.055em; }
+.v16-intent-title p { margin: 4px 0 0; color: var(--muted); font-size: 13px; }
+.intent-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.intent-card { min-height: 132px; border: 1px solid var(--line); border-radius: 24px; padding: 14px; background: var(--surface); color: var(--text); text-align: left; box-shadow: var(--shadow); display: grid; align-content: space-between; gap: 10px; cursor: pointer; }
+.intent-card i { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 14px; background: rgba(99,102,241,.16); font-style: normal; font-size: 21px; }
+.intent-card b { display: block; font-size: 16px; line-height: 1.1; letter-spacing: -.035em; }
+.intent-card span { display: block; color: var(--muted); font-size: 12px; line-height: 1.35; margin-top: 4px; }
+.intent-card.primary { background: linear-gradient(135deg, rgba(99,102,241,.24), rgba(8,145,178,.12)), var(--surface); border-color: rgba(99,102,241,.35); }
+.intent-card.danger { background: linear-gradient(135deg, rgba(239,68,68,.18), rgba(99,102,241,.08)), var(--surface); border-color: rgba(239,68,68,.34); }
+.intent-card.warn { background: linear-gradient(135deg, rgba(245,158,11,.16), rgba(99,102,241,.08)), var(--surface); border-color: rgba(245,158,11,.30); }
+.v16-compact-library { margin-top: 6px; }
+.v16-compact-library > summary { list-style: none; cursor: pointer; border: 1px solid var(--line); border-radius: 18px; padding: 12px 14px; background: var(--surface-2); font-weight: 900; }
+.v16-compact-library > summary::-webkit-details-marker { display: none; }
+.v16-compact-library > summary::after { content: ' ↓'; color: var(--muted); }
+.v16-compact-library[open] > summary::after { content: ' ↑'; }
+.v16-card-grid { display: grid; gap: 10px; margin-top: 10px; }
+.v16-promise-card { padding: 14px; border-radius: 22px; border: 1px solid rgba(99,102,241,.28); background: rgba(99,102,241,.09); }
+.v16-promise-card b { display: block; margin-bottom: 4px; }
+.v16-promise-card p { margin: 0; color: var(--muted); font-size: 13px; }
+.v16-essential { display: grid; gap: 12px; border-color: rgba(99,102,241,.35); background: linear-gradient(135deg, rgba(99,102,241,.13), rgba(8,145,178,.07)), var(--surface); }
+.v16-essential-head { display: flex; gap: 12px; align-items: flex-start; justify-content: space-between; }
+.v16-essential-head h2 { font-size: 24px; line-height: 1; margin: 0 0 4px; }
+.v16-essential-head p { margin: 0; color: var(--muted); font-size: 13px; }
+.v16-essential-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.v16-essential-item { border: 1px solid var(--line); background: rgba(255,255,255,.055); border-radius: 17px; padding: 10px; }
+.v16-essential-item b { display: flex; align-items: center; gap: 6px; color: var(--text); font-size: 12px; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 5px; }
+.v16-essential-item p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.42; }
+.v16-essential-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.v16-essential-actions .primary-btn, .v16-essential-actions .ghost-btn { min-height: 46px; padding: 0 12px; }
+.v16-core-details { border: 1px solid var(--line); background: var(--surface); border-radius: var(--radius); padding: 0; overflow: hidden; }
+.v16-core-details > summary { list-style: none; padding: 14px 16px; cursor: pointer; font-weight: 1000; background: var(--surface-2); }
+.v16-core-details > summary::-webkit-details-marker { display: none; }
+.v16-core-details .v16-core-inner { padding: 12px; display: grid; gap: 12px; }
+.v16-mini-lesson { display: grid; gap: 10px; margin: 12px 0; }
+.v16-lesson-card { border: 1px solid var(--line); border-radius: 18px; padding: 12px; background: rgba(255,255,255,.055); }
+.v16-lesson-card.lead { border-color: rgba(99,102,241,.38); background: rgba(99,102,241,.10); }
+.v16-lesson-card.warn { border-color: rgba(245,158,11,.35); background: rgba(245,158,11,.10); }
+.v16-lesson-card.action { border-color: rgba(16,185,129,.35); background: rgba(16,185,129,.09); }
+.v16-lesson-card b { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-bottom: 6px; }
+.v16-lesson-card p { margin: 0; line-height: 1.52; font-size: 14px; color: var(--text); }
+.v16-lesson-card ul { margin: 0; padding-left: 17px; color: var(--muted); font-size: 13px; }
+.v16-lesson-card li { margin: 4px 0; line-height: 1.45; }
+.v16-core-plain { display: grid; gap: 8px; }
+.v16-core-plain p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.56; border-left: 2px solid var(--line); padding-left: 10px; }
+.v16-neuro-header { display: grid; gap: 10px; }
+.v16-reading-progress { display: flex; gap: 8px; flex-wrap: wrap; }
+.v16-path-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.learning-path-card, .learn-card { min-height: 76px; }
+.substance-card { min-height: 142px; padding: 13px; }
+.substance-card h3 { font-size: 18px; line-height: 1.08; }
+.substance-card p { font-size: 12px; line-height: 1.35; }
+.mini-row { gap: 3px; }
+.doc-header { padding: 13px 14px; }
+.doc-header h1 { font-size: clamp(26px, 8vw, 38px); line-height: 1; max-width: 12ch; }
+.doc-header p { font-size: 12px; line-height: 1.35; }
+.segmented button { min-height: 38px; font-size: 12px; }
+.card-xl { padding: 14px; }
+.card-head h2 { font-size: 18px; }
+.session-active-screen .live-hero { padding: 14px; }
+.session-active-screen .live-hero h1 { font-size: clamp(24px, 7vw, 34px); line-height: 1; }
+.next-hour-item, .cockpit-card .alert, .session-helper-note { overflow-wrap: break-word; word-break: normal; }
+.bottom-nav { padding: 7px; border-radius: 24px; }
+.bottom-nav button { min-height: 50px; border-radius: 17px; }
+.bottom-nav small { font-size: 9px; }
+@media (max-width: 390px) {
+  .intent-grid, .v16-essential-grid, .v16-essential-actions, .v16-path-row { grid-template-columns: 1fr; }
+  .hero.wow-card { min-height: 220px; }
+  .hero h1 { max-width: 10ch; }
+  .top-actions { gap: 5px; }
+  .icon-btn, .sos-mini { min-height: 40px; width: 40px; }
+  .expert-toggle { max-width: 44px; }
+  .expert-toggle::first-letter { font-size: 0; }
+  .brand small { font-size: 9px; }
+}
+@media (max-width: 340px) {
+  .brand small { display: none; }
+  .brand b { font-size: 13px; }
+  .top-actions .icon-btn { width: 38px; }
+}
+
 </style>
 </head>
 <body>
@@ -1207,8 +1310,7 @@ body.doc-compact .segmented { padding-top: 6px; }
     expert: 'rdr_mode_expert',
     lang: 'rdr_lang',
     readModules: 'rdr_read_modules',
-    contentVersion: 'rdr_content_version',
-    recoveryCheckins: 'rdr_recovery_checkins'
+    contentVersion: 'rdr_content_version'
   };
 
   const storage = {
@@ -1219,10 +1321,9 @@ body.doc-compact .segmented { padding-top: 6px; }
     setJSON(key, value) { try { localStorage.setItem(key, JSON.stringify(value)); return true; } catch { return false; } }
   };
 
-  const DISCLAIMER_VERSION = 'v15.2';
-  const CONTENT_VERSION = 'v15.2';
-  const APP_VERSION = 'v15.2.0';
-  const APP_CACHE_KEY = 'tripsafe-rdr-v15-2-0';
+  const DISCLAIMER_VERSION = 'v16';
+  const CONTENT_VERSION = 'v16';
+  const APP_VERSION = 'v16.0.0';
 
   const i18n = {
     "fr": {
@@ -1895,13 +1996,7 @@ body.doc-compact .segmented { padding-top: 6px; }
     companionChecklist1: 'Consciente et respiration normale ?',
     companionChecklist2: 'Trop chaud / douleur thoracique / confusion sévère ?',
     companionChecklist3: 'Substances, heure et quantité approximative notées ?',
-    companionChecklist4: 'Lieu calme, frais, personne sobre présente ?',
-    sessionStatsTitle: 'Statistiques de suivi',
-    sessionStatsBody: 'Résumé local des prises, mélanges actifs, incertitude et alcool cumulé. Cela aide à savoir quoi surveiller, sans prouver qu’une situation est sûre.',
-    intakeCountLabel: 'prises',
-    mixCountLabel: 'mélanges actifs',
-    activeWindowLabel: 'fenêtres actives',
-    alcoholCumLabel: 'verres standard'
+    companionChecklist4: 'Lieu calme, frais, personne sobre présente ?'
   });
   Object.assign(i18n.en, {
     v15UpdateAvailable: 'New version available — update',
@@ -1959,103 +2054,7 @@ body.doc-compact .segmented { padding-top: 6px; }
     companionChecklist1: 'Conscious and breathing normally?',
     companionChecklist2: 'Too hot / chest pain / severe confusion?',
     companionChecklist3: 'Substances, time and approximate quantity noted?',
-    companionChecklist4: 'Calm, cool place, sober person present?',
-    sessionStatsTitle: 'Tracking statistics',
-    sessionStatsBody: 'Local summary of intakes, active mixes, uncertainty and cumulative alcohol. It helps decide what to monitor, never proves safety.',
-    intakeCountLabel: 'intakes',
-    mixCountLabel: 'active mixes',
-    activeWindowLabel: 'active windows',
-    alcoholCumLabel: 'standard drinks'
-  });
-
-  // ===== v15.2 i18n additions =====
-  Object.assign(i18n.fr, {
-    appVersionLabel: 'Version',
-    remoteVersionLabel: 'Version distante',
-    v15UpdateAvailable: 'Nouvelle version disponible — mettre à jour',
-    v15UpdateBody: 'Si l’icône écran d’accueil reste bloquée sur une ancienne version, utilise “Mettre à jour” puis “Débloquer le cache”.',
-    v15UpdateNow: 'Mettre à jour',
-    v15ResetCache: 'Débloquer le cache',
-    pwaTechnicalUpdate: 'Correctif GitHub Pages : index en network-first, cache versionné, suppression des anciens caches, bouton de réparation.',
-    learningPathTitle: 'Parcours d’apprentissage',
-    learningPathBody: 'Revenir entre les sessions sert à comprendre les mécanismes, pas à préparer une prise. Choisis un parcours court et avance module par module avec prudence.',
-    pathMixes: 'Parcours mélanges actifs',
-    pathRecovery: 'Parcours récupération',
-    pathCompanion: 'Parcours accompagnant',
-    whyNowTitle: 'Pourquoi ça compte maintenant',
-    whyNowGeneric: 'Ce mécanisme sert à traduire une sensation en décision prudente : ralentir, éviter les mélanges, surveiller le corps, demander de l’aide si un signal rouge apparaît.',
-    contextualGlossaryTitle: 'Glossaire contextuel',
-    contextualGlossaryBody: 'Les termes bleus sont tapables. En session active, retiens surtout le lien mécanisme → signal corporel → action prudente.',
-    historyInsightsTitle: 'Lecture de l’historique',
-    history30: '30 jours',
-    history90: '90 jours',
-    historyMixes: 'sessions avec mélange',
-    historyAvgGap: 'intervalle moyen',
-    recoveryCheckinsTitle: 'Check-in récupération',
-    checkinJ1: 'J+1',
-    checkinJ3: 'J+3',
-    checkinJ7: 'J+7',
-    checkinPrompt: 'Note courte : sommeil, humeur, anxiété, envie de reprendre, douleurs ou question à partager.',
-    checkinSaved: 'Check-in enregistré localement.',
-    noCheckins: 'Aucun check-in enregistré pour cette session.',
-    next60ItemTimeline: 'Sur les 60 prochaines minutes, les phases peuvent changer : utilise l’horloge du téléphone comme estimation, pas comme certitude.',
-    next60ItemMix: 'Si un mélange est actif, le risque principal peut venir de l’interaction plutôt que de la dose isolée.',
-    next60ItemUncertainty: 'Si la dose est visuelle ou non analysée, l’incertitude reste une information de sécurité à part entière.',
-    focusInputsVerified: 'Champs de saisie stabilisés : les valeurs critiques gardent un id et évitent les rendus inutiles pendant la frappe.',
-    hardRefreshHelp: 'Si le raccourci écran d’accueil reste ancien : ouvrir l’app, utiliser Débloquer le cache, puis relancer depuis l’icône.',
-    companionModeTitle: 'J’aide quelqu’un',
-    companionModeBody: 'Priorité : conscience, respiration, chaleur, douleur thoracique, substances/heure, endroit calme. En doute : 112.',
-    noDriving: 'Ne pas conduire. Une estimation locale ne peut jamais autoriser la conduite.',
-    updateCheckNow: 'Vérifier la version',
-    pwaHardResetExplain: 'Réparation du cache PWA : les caches TripSafe sont vidés puis la version réseau est rechargée. Prudence.',
-    pwaUpdateDetected: 'Nouvelle version détectée.',
-    updateAlreadyLatest: 'La version locale est à jour.',
-    updateRemoteUnknown: 'Vérification distante impossible pour l’instant.',
-    sessionStatsTitle: 'Statistiques de suivi', sessionStatsBody: 'Résumé local des prises, mélanges actifs, incertitude et alcool cumulé. Cela aide à savoir quoi surveiller, sans prouver qu’une situation est sûre.', intakeCountLabel: 'prises', mixCountLabel: 'mélanges actifs', activeWindowLabel: 'fenêtres actives', alcoholCumLabel: 'verres standard'
-  });
-  Object.assign(i18n.en, {
-    appVersionLabel: 'Version',
-    remoteVersionLabel: 'Remote version',
-    v15UpdateAvailable: 'New version available — update',
-    v15UpdateBody: 'If the home-screen icon stays stuck on an old version, use “Update” then “Unblock cache”.',
-    v15UpdateNow: 'Update',
-    v15ResetCache: 'Unblock cache',
-    pwaTechnicalUpdate: 'GitHub Pages fix: network-first index, versioned cache, old-cache deletion, repair button.',
-    learningPathTitle: 'Learning paths',
-    learningPathBody: 'Coming back between sessions is for understanding mechanisms, not preparing use. Pick a short path and move module by module with caution.',
-    pathMixes: 'Active mixes path',
-    pathRecovery: 'Recovery path',
-    pathCompanion: 'Companion path',
-    whyNowTitle: 'Why this matters now',
-    whyNowGeneric: 'This mechanism helps translate a feeling into a cautious decision: slow down, avoid mixes, monitor the body, ask for help if a red flag appears.',
-    contextualGlossaryTitle: 'Contextual glossary',
-    contextualGlossaryBody: 'Blue terms are tappable. During active tracking, focus on mechanism → body signal → cautious action.',
-    historyInsightsTitle: 'History reading',
-    history30: '30 days',
-    history90: '90 days',
-    historyMixes: 'mixed sessions',
-    historyAvgGap: 'average interval',
-    recoveryCheckinsTitle: 'Recovery check-in',
-    checkinJ1: 'D+1',
-    checkinJ3: 'D+3',
-    checkinJ7: 'D+7',
-    checkinPrompt: 'Short note: sleep, mood, anxiety, urge to reuse, pain or question to share.',
-    checkinSaved: 'Check-in saved locally.',
-    noCheckins: 'No check-in saved for this session.',
-    next60ItemTimeline: 'Over the next 60 minutes, phases may shift: use the phone clock as an estimate, not certainty.',
-    next60ItemMix: 'If a mix is active, the main risk may come from the interaction rather than the isolated dose.',
-    next60ItemUncertainty: 'If the dose is visual or untested, uncertainty is safety information in itself.',
-    focusInputsVerified: 'Input fields stabilized: critical values keep an id and avoid unnecessary renders while typing.',
-    hardRefreshHelp: 'If the home-screen shortcut stays old: open the app, use Unblock cache, then relaunch from the icon.',
-    companionModeTitle: 'I am helping someone',
-    companionModeBody: 'Priority: consciousness, breathing, heat, chest pain, substances/time, calm place. If unsure: 112.',
-    noDriving: 'Do not drive. A local estimate can never authorize driving.',
-    updateCheckNow: 'Check version',
-    pwaHardResetExplain: 'PWA cache repair: TripSafe caches are cleared, then the network version reloads. Stay cautious.',
-    pwaUpdateDetected: 'New version detected.',
-    updateAlreadyLatest: 'Local version is up to date.',
-    updateRemoteUnknown: 'Remote version check unavailable for now.',
-    sessionStatsTitle: 'Tracking statistics', sessionStatsBody: 'Local summary of intakes, active mixes, uncertainty and cumulative alcohol. It helps decide what to monitor, never proves safety.', intakeCountLabel: 'intakes', mixCountLabel: 'active mixes', activeWindowLabel: 'active windows', alcoholCumLabel: 'standard drinks'
+    companionChecklist4: 'Calm, cool place, sober person present?'
   });
 
   function tr(key) { return t(key); }
@@ -4130,24 +4129,6 @@ body.doc-compact .segmented { padding-top: 6px; }
     storage.set(STORAGE.contentVersion, CONTENT_VERSION);
   }
 
-  async function checkRemoteVersion(manual = false) {
-    if (location.protocol === 'file:') { if (manual && typeof RDR !== 'undefined') RDR.toast(t('updateFailed')); return false; }
-    try {
-      const res = await fetch('./version.json?ts=' + Date.now(), { cache: 'no-store' });
-      if (!res.ok) throw new Error('version fetch failed');
-      const data = await res.json();
-      state.remoteVersion = data.version || null;
-      const hasUpdate = !!data.version && data.version !== APP_VERSION;
-      state.pwaUpdateAvailable = hasUpdate;
-      if (manual && typeof RDR !== 'undefined') RDR.toast(hasUpdate ? t('pwaUpdateDetected') : t('updateAlreadyLatest'));
-      render();
-      return hasUpdate;
-    } catch {
-      if (manual && typeof RDR !== 'undefined') RDR.toast(t('updateRemoteUnknown'));
-      return false;
-    }
-  }
-
   const state = {
     view: 'home',
     selected: 'mdma',
@@ -4177,8 +4158,6 @@ body.doc-compact .segmented { padding-top: 6px; }
     readModules: storage.getJSON(STORAGE.readModules, {}),
     contentUpdateAvailable: false,
     pwaUpdateAvailable: false,
-    remoteVersion: null,
-    recoveryCheckins: storage.getJSON(STORAGE.recoveryCheckins, {}),
     theme: storage.get(STORAGE.theme) || 'dark',
     expert: storage.get(STORAGE.expert) === 'yes',
     now: Date.now(),
@@ -4655,8 +4634,7 @@ body.doc-compact .segmented { padding-top: 6px; }
       <div class="alert ${risk.type}"><b>${escapeHTML(risk.title)}</b><p>${wrapGlossaire(risk.body)}</p><p class="compact-note">${escapeHTML(risk.action || t('mixAlertAction'))}</p></div>
       <div class="alert ${um.cls}"><b>${t('uncertaintyTitle')} — ${escapeHTML(um.title)}</b><p>${escapeHTML(um.body)}</p>${u.reasons.length ? `<p class="compact-note">${escapeHTML(u.reasons.join(' · '))}</p>` : ''}</div>
       ${alc.entries ? `<div class="alert info"><b>${t('alcoholCumulativeTitle')}</b><p>${t('alcoholTotalStd')} : ${alc.stdTotal.toFixed(1)} · ${t('alcoholCurrentBac')} ≈ ${alc.bacCurrent.toFixed(2)} g/L</p><p class="compact-note">${t('alcoholMultiEntry')} ${t('bacLimitFranceShort')} ${t('alcoholNoDriveStrong')}</p></div>` : ''}
-      ${renderSessionStats(session)}
-      ${renderNext60(session)}
+      <article class="action-strip"><b>${t('next60Title')}</b><span>${t('next60Body')}</span></article>
     </article>`;
   }
   function renderSessionInteractionCards(session) {
@@ -4755,80 +4733,6 @@ body.doc-compact .segmented { padding-top: 6px; }
     return lines;
   }
 
-
-  function renderLearningPathCard() {
-    return `<article class="learning-path-card"><h2>${t('learningPathTitle')}</h2><p class="muted">${t('learningPathBody')}</p><div class="learning-path-grid"><button onclick="RDR.go('interactions')">⚡ ${t('pathMixes')}</button><button onclick="RDR.selectSubstance('mdma','recovery')">↻ ${t('pathRecovery')}</button><button onclick="RDR.openCompanion()">🆘 ${t('pathCompanion')}</button></div><p class="context-glossary-note" style="margin-top:10px;"><b>${t('contextualGlossaryTitle')}</b><br>${t('contextualGlossaryBody')}</p></article>`;
-  }
-
-  function renderWhyNowCard(sub, module, idx) {
-    let body = t('whyNowGeneric');
-    if (sub.id === 'alcool') body = isEn() ? 'Alcohol changes memory, breathing, liver load and judgement at the same time. The useful decision is to slow the context down, avoid sedative mixes and never use BAC estimates to justify driving.' : 'L’alcool modifie mémoire, respiration, foie et jugement en même temps. La décision utile est de ralentir le contexte, éviter les mélanges sédatifs et ne jamais utiliser l’alcoolémie estimée pour justifier la conduite.';
-    if (sub.id === 'cocaine') body = isEn() ? 'Cocaine risk often becomes visible through the heart, anxiety, redosing and alcohol combinations. The useful decision is to treat chest pain, palpitations or confusion as red flags.' : 'Le risque cocaïne devient souvent visible par le cœur, l’anxiété, les reprises et l’association avec alcool. La décision utile est de traiter douleur thoracique, palpitations ou confusion comme des signaux rouges.';
-    if (sub.id === 'mdma') body = isEn() ? 'For MDMA, the mechanism matters because redosing, heat and water balance can change risk faster than the felt plateau suggests. Monitor heart, temperature and recovery with caution.' : 'Pour la MDMA, le mécanisme compte parce que reprise, chaleur et équilibre hydrique peuvent changer le risque plus vite que le plateau ressenti. Surveille cœur, température et récupération avec prudence.';
-    if (sub.id === 'ketamine') body = isEn() ? 'For ketamine, dissociation can hide body signals. The useful decision is to reduce movement, avoid depressant mixes, and protect physical safety before interpreting the experience.' : 'Pour la kétamine, la dissociation peut masquer les signaux corporels. La décision utile est de réduire les déplacements, éviter les dépresseurs et protéger la sécurité physique avant d’interpréter l’expérience.';
-    return `<div class="why-now-card"><b>${t('whyNowTitle')}</b><p>${wrapGlossaire(body)}</p></div>`;
-  }
-
-  function next60Items(session) {
-    const pairs = sessionInteractionPairs(session);
-    const u = sessionUncertainty(session);
-    const items = [{ cls: 'info', text: t('next60ItemTimeline') }];
-    if (pairs[0]) items.push({ cls: pairs[0].rank >= 5 ? 'danger' : pairs[0].rank >= 4 ? 'warn' : 'info', text: `${t('next60ItemMix')} ${labelOf(pairs[0].a)} + ${labelOf(pairs[0].b)} : ${pairs[0].inter.action || t('mixAlertAction')}` });
-    if (u.level !== 'low') items.push({ cls: uncertaintyMeta(u.level).cls, text: `${t('next60ItemUncertainty')} ${uncertaintyMeta(u.level).body}` });
-    return items;
-  }
-
-  function renderNext60(session) {
-    const items = next60Items(session);
-    return `<article class="action-strip"><b>${t('next60Title')}</b><div class="next60-list">${items.map(x => `<div class="next60-item ${x.cls}">${escapeHTML(x.text)}</div>`).join('')}</div></article>`;
-  }
-
-
-  function renderSessionStats(session) {
-    const entries = entryList(session);
-    const pairs = sessionInteractionPairs(session);
-    const active = activeEntries(session).length;
-    const alc = aggregateAlcohol(session);
-    return `<div class="session-stats-card"><b>${t('sessionStatsTitle')}</b><p>${t('sessionStatsBody')}</p><div class="stats-grid"><span><b>${entries.length}</b><small>${t('intakeCountLabel')}</small></span><span><b>${pairs.length}</b><small>${t('mixCountLabel')}</small></span><span><b>${active}</b><small>${t('activeWindowLabel')}</small></span><span><b>${alc.entries ? alc.stdTotal.toFixed(1) : '0'}</b><small>${t('alcoholCumLabel')}</small></span></div></div>`;
-  }
-
-  function renderHistoryInsights(sessions) {
-    const now = Date.now();
-    const last30 = sessions.filter(s => (now - new Date(s.startedAt).getTime()) / 864e5 < 30).length;
-    const last90 = sessions.filter(s => (now - new Date(s.startedAt).getTime()) / 864e5 < 90).length;
-    const mixes = sessions.filter(s => (s.entries || []).some(e => e.substance && e.substance !== s.substance) || (s.coUse || []).length).length;
-    const sorted = [...sessions].sort((a,b)=>new Date(a.startedAt)-new Date(b.startedAt));
-    let avgGap = '—';
-    if (sorted.length > 1) {
-      const gaps = sorted.slice(1).map((s,i)=>(new Date(s.startedAt)-new Date(sorted[i].startedAt))/864e5).filter(x=>Number.isFinite(x) && x>=0);
-      if (gaps.length) avgGap = (gaps.reduce((a,b)=>a+b,0)/gaps.length).toFixed(1) + ' j';
-    }
-    return `<article class="card-xl"><h2>${t('historyInsightsTitle')}</h2><div class="history-insights-grid"><div class="history-insight"><b>${last30}</b><small>${t('history30')}</small></div><div class="history-insight"><b>${last90}</b><small>${t('history90')}</small></div><div class="history-insight"><b>${mixes}</b><small>${t('historyMixes')}</small></div><div class="history-insight"><b>${avgGap}</b><small>${t('historyAvgGap')}</small></div></div></article>`;
-  }
-
-  function renderRecoveryCheckinBlock(session) {
-    const notes = state.recoveryCheckins[session.id] || {};
-    const saved = Object.entries(notes).map(([day, note]) => `<p class="compact-note"><b>${escapeHTML(day)}</b> — ${escapeHTML(note)}</p>`).join('') || `<p class="compact-note">${t('noCheckins')}</p>`;
-    return `<div class="recovery-checkin"><b>${t('recoveryCheckinsTitle')}</b>${saved}<div class="checkin-row"><button onclick="RDR.recoveryCheckin('${session.id}','${t('checkinJ1')}')">${t('checkinJ1')}</button><button onclick="RDR.recoveryCheckin('${session.id}','${t('checkinJ3')}')">${t('checkinJ3')}</button><button onclick="RDR.recoveryCheckin('${session.id}','${t('checkinJ7')}')">${t('checkinJ7')}</button></div></div>`;
-  }
-
-
-  function renderPreparationCard() {
-    return `<article class="card-xl prep-card"><h2>${t('prepTitle')}</h2><p class="muted">${t('prepBody')}</p><div class="prep-list"><div>✓ ${t('prep1')}</div><div>✓ ${t('prep2')}</div><div>✓ ${t('prep3')}</div><div>✓ ${t('prep4')}</div></div></article>`;
-  }
-
-  function renderHistoryMiniTrends(sessions) {
-    if (!sessions.length) return '';
-    const counts = sessions.reduce((acc, s) => { const k = labelOf(s.substance); acc[k] = (acc[k] || 0) + 1; return acc; }, {});
-    const max = Math.max(...Object.values(counts), 1);
-    const rows = Object.entries(counts).sort((a,b)=>b[1]-a[1]).map(([name, count]) => `<div class="mini-bar-row"><span>${escapeHTML(name)}</span><div class="mini-bar-track"><span class="mini-bar-fill" style="width:${Math.max(4, Math.round(count / max * 100))}%"></span></div><b>${count}</b></div>`).join('');
-    return `<article class="card-xl"><h2>${t('personalTrendsTitle')}</h2><div class="history-mini-chart">${rows}</div><p class="compact-note">${t('sleepMoodRecovery')} · ${t('recoveryCheckinsTitle')}</p></article>`;
-  }
-
-  function renderReminderControls() {
-    return `<article class="card-xl"><h2>${t('reminderTitle')}</h2><p class="muted">${t('reminderBody')}</p><div class="reminder-row"><button onclick="RDR.setLocalReminder(30)">${t('reminder30')}</button><button onclick="RDR.setLocalReminder(60)">${t('reminder60')}</button></div></article>`;
-  }
-
   function renderToast() {
     return `<div class="toast-box">${escapeHTML(state.toast)}</div>`;
   }
@@ -4855,10 +4759,7 @@ body.doc-compact .segmented { padding-top: 6px; }
     </header>${state.pwaUpdateAvailable ? renderPWAUpdateBanner() : ''}`;
   }
   function renderPWAUpdateBanner() {
-    return `<div class="pwa-update-banner"><div><b>${t('v15UpdateAvailable')}</b><p>${t('v15UpdateBody')} <span class="pwa-version-pill">${t('appVersionLabel')} ${APP_VERSION}${state.remoteVersion ? ' · ' + t('remoteVersionLabel') + ' ' + escapeHTML(state.remoteVersion) : ''}</span></p><p>${t('pwaTechnicalUpdate')}</p></div><button class="small-btn" onclick="RDR.updateNow()">${t('v15UpdateNow')}</button><button class="small-btn ghost" onclick="RDR.checkRemoteVersion(true)">${t('updateCheckNow')}</button><button class="small-btn ghost" onclick="RDR.forceResetCache()">${t('v15ResetCache')}</button></div>`;
-  }
-  function renderPWARepairCard() {
-    return `<article class="card-xl pwa-repair-card"><div class="card-head"><div><h2>${t('v15UpdateAvailable')}</h2><p class="subtitle">${t('forceUpdateHelp')}</p></div><span class="pwa-version-pill">${t('appVersionLabel')} ${APP_VERSION}</span></div><p class="compact-note">${t('remoteVersionLabel')} : ${escapeHTML(state.remoteVersion || '—')}</p><div class="hero-actions"><button class="small-btn" onclick="RDR.checkRemoteVersion(true)">${t('updateCheckNow')}</button><button class="small-btn ghost" onclick="RDR.forceResetCache()">${t('v15ResetCache')}</button></div><p class="compact-note">${t('pwaTechnicalUpdate')}</p></article>`;
+    return `<div class="pwa-update-banner"><div><b>${t('v15UpdateAvailable')}</b><p>${t('v15UpdateBody')}</p></div><button class="small-btn" onclick="RDR.updateNow()">${t('v15UpdateNow')}</button><button class="small-btn ghost" onclick="RDR.forceResetCache()">${t('v15ResetCache')}</button></div>`;
   }
 
 
@@ -4879,6 +4780,69 @@ body.doc-compact .segmented { padding-top: 6px; }
     return renderHome();
   }
 
+
+
+
+  // ===== v16 remote version / learning / recovery helpers =====
+  async function checkRemoteVersion(showToast = false) {
+    if (location.protocol === 'file:') return;
+    try {
+      const res = await fetch('./version.json?ts=' + Date.now(), { cache: 'no-store' });
+      if (!res.ok) throw new Error('version fetch failed');
+      const data = await res.json();
+      state.remoteVersion = data.version || '';
+      if (data.version && data.version !== APP_VERSION) {
+        state.pwaUpdateAvailable = true;
+        render();
+      } else if (showToast) {
+        RDR.toast(t('v152NoUpdate'));
+      }
+    } catch (e) {
+      if (showToast) RDR.toast(t('updateFailed'));
+    }
+  }
+
+  function renderLearningPaths() {
+    return `<article class="card-xl learning-paths-card"><div class="card-head"><div><h2>${t('learningPathsTitle')}</h2><p class="subtitle">${t('learningPathSub')}</p></div><span class="badge info">v16</span></div><div class="learn-shortcuts learning-paths-grid"><button class="learn-card" onclick="RDR.selectSubstance('mdma','neuro')">🧠 <b>${t('learningPathMdma')}</b><small>6 modules · SERT · température</small></button><button class="learn-card" onclick="RDR.selectSubstance('alcool','dose')">🍷 <b>${t('learningPathAlcohol')}</b><small>verres · BAC · conduite</small></button><button class="learn-card" onclick="RDR.go('interactions')">⚡ <b>${t('learningPathMixes')}</b><small>matrice · session · alertes</small></button><button class="learn-card" onclick="RDR.go('history')">🌙 <b>${t('learningPathRecovery')}</b><small>J+1 · J+3 · J+7</small></button></div></article>`;
+  }
+
+  function whyItMattersNowText(subId, mod, idx) {
+    const title = String(mod?.title || '').toLowerCase();
+    if (subId === 'alcool') return isEn() ? 'Alcohol risks evolve with time, cumulative drinks and combinations. This module helps separate what is felt from what is still active in the body. Stay cautious.' : 'Les risques de l’alcool évoluent avec le temps, les verres cumulés et les mélanges. Ce module aide à distinguer ce qui est ressenti de ce qui reste actif dans le corps. Prudence.';
+    if (subId === 'cocaine') return isEn() ? 'Cocaine risk is often cardiovascular before it is psychological. This module helps identify the signal to monitor before another stimulant or alcohol changes the profile. Stay cautious.' : 'Le risque cocaïne est souvent cardiovasculaire avant d’être psychologique. Ce module aide à repérer le signal à surveiller avant qu’un stimulant ou l’alcool ne change le profil. Prudence.';
+    if (/sert|vmat|cyp|temp|heart|valve|reconstruction/.test(title)) return isEn() ? 'This mechanism changes the meaning of redosing, heat, sleep and recovery. Use it to slow down decisions, not to optimize use. Stay cautious.' : 'Ce mécanisme change le sens des reprises, de la chaleur, du sommeil et de la récupération. Il sert à ralentir les décisions, pas à optimiser une prise. Prudence.';
+    if (/nmda|vessie|bladder|cardio|memory/.test(title)) return isEn() ? 'This explains why dissociation can hide body signals. Physical safety, mixes and repetition matter as much as the immediate effect. Stay cautious.' : 'Cela explique pourquoi la dissociation peut masquer les signaux corporels. Sécurité physique, mélanges et répétition comptent autant que l’effet immédiat. Prudence.';
+    if (/integration|plastic|bdnf|récup|recovery|rem/.test(title)) return isEn() ? 'The days after are part of the risk window. Sleep, narrative integration and calm context are useful data, not optional extras. Stay cautious.' : 'Les jours suivants font partie de la fenêtre de risque. Sommeil, intégration narrative et calme sont des données utiles, pas des options. Prudence.';
+    return t('whyItMattersGeneric');
+  }
+  function renderWhyItMattersNow(sub, mod, idx) {
+    return `<div class="why-now-card"><b>${t('whyItMattersNow')}</b><p>${wrapGlossaire(whyItMattersNowText(sub.id, mod, idx))}</p></div>`;
+  }
+
+  function checkinKey(sessionId, day) { return String(sessionId) + '_d' + String(day); }
+  function hasCheckin(sessionId, day) { return state.recoveryCheckins.some(c => c.key === checkinKey(sessionId, day)); }
+  function renderRecoveryCheckins(sessions) {
+    const recent = sessions.slice(0, 3);
+    return `<article class="card-xl recovery-checkins-card"><div class="card-head"><div><h2>${t('recoveryCheckinsTitle')}</h2><p class="subtitle">${t('recoveryCheckinsSub')}</p></div><span class="badge info">J+1/3/7</span></div>${recent.length ? recent.map(s => { const sub = getSubstance(s.substance); return `<div class="history-item recovery-checkin-item"><div><b>${escapeHTML(sub.short)}</b><span>${new Date(s.startedAt).toLocaleDateString(localeDateCode())}</span></div><div class="checkin-row">${[1,3,7].map(d => hasCheckin(s.id, d) ? `<span class="badge safe">${t('dayPlus'+d)} ✓</span>` : `<button class="small-btn" onclick="RDR.saveRecoveryCheck('${s.id}',${d})">${t('dayPlus'+d)}</button>`).join('')}</div></div>`; }).join('') : `<p class="muted">${t('noHistory')}</p>`}</article>`;
+  }
+
+  function renderRecoveryStats(sessions) {
+    const sorted = [...sessions].sort((a,b)=>new Date(a.startedAt)-new Date(b.startedAt));
+    const intervals = [];
+    for (let i=1;i<sorted.length;i++) intervals.push((new Date(sorted[i].startedAt)-new Date(sorted[i-1].startedAt))/864e5);
+    const avg = intervals.length ? (intervals.reduce((a,b)=>a+b,0)/intervals.length).toFixed(1) + ' j' : '—';
+    const mixed = sessions.filter(s => activeSubstanceKeys(s).length >= 2 || (s.entries||[]).some(e => e.substance && e.substance !== s.substance) || (s.coUse||[]).length).length;
+    return `<article class="card-xl recovery-stats-card"><h2>${t('recoveryStatsTitle')}</h2><p class="muted">${t('recoveryStatsBody')}</p><div class="history-stats-grid"><div><b>${sessions.length}</b><span>${t('archivedSessions')}</span></div><div><b>${avg}</b><span>${t('avgInterval')}</span></div><div><b>${mixed}</b><span>${t('mixedSessions')}</span></div><div><b>${state.recoveryCheckins.length}</b><span>${t('checkinsSaved')}</span></div></div></article>`;
+  }
+
+  function renderSessionStats(session) {
+    const entries = entryList(session);
+    const known = entries.filter(e => e.known).length;
+    const estimated = entries.length - known;
+    const mixCount = sessionInteractionPairs(session).filter(p => p.rank >= 4).length;
+    const u = sessionUncertainty(session); const um = uncertaintyMeta(u.level);
+    return `<article class="card-xl session-stats-card"><h2>${t('sessionStatsTitle')}</h2><div class="history-stats-grid"><div><b>${entries.length}</b><span>${t('intakesCount')}</span></div><div><b>${mixCount}</b><span>${t('activeMixesCount')}</span></div><div><b>${escapeHTML(um.title)}</b><span>${t('currentUncertainty')}</span></div><div><b>${known}/${estimated}</b><span>${t('knownVsEstimated')}</span></div></div><p class="compact-note">${t('contextGlossaryHint')}</p></article>`;
+  }
 
   function compassHomeHistoryText() {
     if (state.sessions.length > 0) return `${state.sessions.length} ${t('compassHistoryCount')}`;
@@ -4930,8 +4894,6 @@ body.doc-compact .segmented { padding-top: 6px; }
       <div class="learn-shortcuts">
         ${learnCards.map(c => `<button class="learn-card" onclick="RDR.selectSubstance('${c.sub}','${c.tab}')"><span>${c.icon}</span><b>${t(c.key)}</b><small>${t(c.preview)}</small></button>`).join('')}
       </div>
-      ${renderLearningPathCard()}
-      ${renderPWARepairCard()}
       ${state.contentUpdateAvailable ? `<div class="alert info" style="margin-bottom:10px;">${t('newContentAvailable')}</div>` : ''}
       ${state.expert ? `<p class="compact-note" style="text-align:center;color:var(--info);">${t('expertActiveNote')}</p>` : ''}
       <div class="section-title"><h2>${t('sectionPsy')}</h2><p>${t('substanceSubtitle')}</p></div>
@@ -5216,7 +5178,6 @@ body.doc-compact .segmented { padding-top: 6px; }
           ${renderMechanismSvg(sub, m.visual || 'receptor', 0)}
           ${(sub.id === 'alcool' && /sevrage|Delirium/i.test(m.title || '')) ? '<a class="call-btn full" href="tel:15">🚨 ' + t('samuEmergency') + '</a>' : ''}
           <div class="plain-stack">${(m.plain || []).map((x, pi) => `<p class="plain-item ${pi === 0 ? 'plain-lead' : ''}">${wrapGlossaire(x)}</p>`).join('')}</div>
-          ${renderWhyNowCard(sub, m, idx)}
           <details ${state.expert ? 'open' : ''} ontoggle="if(this.open){RDR.markModuleRead('${sub.id}',${idx})}"><summary class="details-summary"><span class="badge info expert-pill">🔬 Expert</span> ${t('goFurther')}</summary><ul>${(m.expert || []).map(x => `<li>${wrapGlossaire(x)}</li>`).join('')}</ul></details>
           ${nextModule ? `<button class="ghost-btn full" style="margin-top:12px;" onclick="RDR.markModuleRead('${sub.id}',${idx}); (function(){ const el = document.getElementById('neuro-module-${sub.id}-${idx + 1}'); if(el){ const top = el.getBoundingClientRect().top + window.scrollY - 140; window.scrollTo({top, behavior:'smooth'}); }})()">${t('nextModule')} : ${escapeHTML(nextModule.title)} →</button>` : `<div class="alert safe" style="margin-top:12px;text-align:center;font-weight:900;">✓ ${t('allModulesRead').replace('{sub}', escapeHTML(sub.short))}</div><button class="ghost-btn full" onclick="RDR.setDocTab('recovery')">${t('ctaRecovery')}</button>`}
         </article>`;
@@ -5242,7 +5203,6 @@ body.doc-compact .segmented { padding-top: 6px; }
         </div>
         ${renderDoseHelp(sub)}
         <div class="result-card ${level.className}"><span>${t('doseLevel')}</span><b>${escapeHTML(doseLabel(level))}</b>${mgkg ? `<em>${mgkg} mg/kg</em>` : ''}</div>
-        <div class="alert ${known ? 'info' : 'critical'}"><b>${t('uncertaintyTitle')}</b><p>${known ? t('notSafeJustUnknown') : t('estimationJournalOnly')}</p></div>
         ${alerts.map(a => `<div class="alert ${a.type}">${escapeHTML(a.text)}</div>`).join('')}
       </article>
       <article class="card-xl"><h2>${t('timelineExplicit')}</h2>${renderTimeline(sub.id)}${renderTimelineDetails(sub.id)}</article>
@@ -5529,11 +5489,11 @@ body.doc-compact .segmented { padding-top: 6px; }
     }
     if (f.substance === 'cocaine' && f.inputMode === 'line') {
       const e = estimateLineMg(f.lineCm, f.lineSize || 'medium');
-      return { dose: '', known: false, display: `≈ ${e.low}-${e.high} mg (${t('rangeOnlyNoMid')})`, estimate: e };
+      return { dose: e.mid, known: false, display: `≈ ${e.low}-${e.high} mg (${t('estimationOnly')})`, estimate: e };
     }
     if (f.substance === 'mdma' && f.inputMode === 'finger') {
       const e = estimateFingerMg(f.fingerSize || 'small');
-      return { dose: '', known: false, display: `≈ ${e.low}-${e.high} mg (${t('rangeOnlyNoMid')})`, estimate: e };
+      return { dose: e.mid, known: false, display: `≈ ${e.low}-${e.high} mg (${t('estimationOnly')})`, estimate: e };
     }
     return { dose: f.dose || '', known: doseInputKnown(f), display: f.dose ? `${f.dose} ${getSubstance(f.substance).unit}` : t('unknownDose') };
   }
@@ -5598,7 +5558,6 @@ body.doc-compact .segmented { padding-top: 6px; }
     return `<section>
       <div class="section-title"><h1>${t('sessionTitle')}</h1><p>${t('sessionSubtitle')}</p></div>
       ${renderCompanionEntryCard()}
-      ${renderPreparationCard()}
       <article class="card-xl quick-start-card">
         <h2>${t('quickStart')}</h2>
         <p class="muted">${t('selectedSubstance')} <b>${escapeHTML(sub.name)}</b></p>
@@ -5662,7 +5621,7 @@ body.doc-compact .segmented { padding-top: 6px; }
 
   function renderSessionTabBody(session, sub) {
     const latest = [...(session.metrics || [])].pop() || {};
-    return `<div class="stack"><article class="card-xl metrics"><h2>${t('liveBody')}</h2><div class="metric-grid">${renderMetric(t('labelFC'), latest.hr ? `${latest.hr} bpm` : '—', t('threshFC'), metricState('hr', latest.hr))}${renderMetric(t('labelTemp'), latest.temp ? `${latest.temp} °C` : '—', t('threshTemp'), metricState('temp', latest.temp))}${renderMetric(t('labelWater'), latest.water ? `${latest.water} ml` : '—', t('threshWater'), 'info')}</div><div class="form-grid three-cols"><label>${t('bpm')}<input id="input-metric-hr" type="number" inputmode="numeric" min="20" max="250" step="1" value="${escapeHTML(state.metricDraft.hr)}" oninput="RDR.metricDraft('hr', this.value)"></label><label>°C<input id="input-metric-temp" type="number" inputmode="decimal" min="32" max="43" step="0.1" value="${escapeHTML(state.metricDraft.temp)}" oninput="RDR.metricDraft('temp', this.value)"></label><label>${t('waterMl')}<input id="input-metric-water" type="number" inputmode="numeric" min="0" max="5000" step="50" value="${escapeHTML(state.metricDraft.water)}" oninput="RDR.metricDraft('water', this.value)"></label></div><button class="ghost-btn full" onclick="RDR.recordMetric()">${t('saveMetrics')}</button></article>${renderReminderControls()}${renderCompanionMini()}</div>`;
+    return `<div class="stack"><article class="card-xl metrics"><h2>${t('liveBody')}</h2><div class="metric-grid">${renderMetric(t('labelFC'), latest.hr ? `${latest.hr} bpm` : '—', t('threshFC'), metricState('hr', latest.hr))}${renderMetric(t('labelTemp'), latest.temp ? `${latest.temp} °C` : '—', t('threshTemp'), metricState('temp', latest.temp))}${renderMetric(t('labelWater'), latest.water ? `${latest.water} ml` : '—', t('threshWater'), 'info')}</div><div class="form-grid three-cols"><label>${t('bpm')}<input id="input-metric-hr" type="number" inputmode="numeric" min="20" max="250" step="1" value="${escapeHTML(state.metricDraft.hr)}" oninput="RDR.metricDraft('hr', this.value)"></label><label>°C<input id="input-metric-temp" type="number" inputmode="decimal" min="32" max="43" step="0.1" value="${escapeHTML(state.metricDraft.temp)}" oninput="RDR.metricDraft('temp', this.value)"></label><label>${t('waterMl')}<input id="input-metric-water" type="number" inputmode="numeric" min="0" max="5000" step="50" value="${escapeHTML(state.metricDraft.water)}" oninput="RDR.metricDraft('water', this.value)"></label></div><button class="ghost-btn full" onclick="RDR.recordMetric()">${t('saveMetrics')}</button></article>${renderCompanionMini()}</div>`;
   }
 
 
@@ -5709,8 +5668,6 @@ body.doc-compact .segmented { padding-top: 6px; }
     const overall = buildOverallHistoryAI(sessions);
     return `<section>
       <div class="section-title"><h1>${t('historyTitle')}</h1><p>${t('historyOnPhone')}</p></div>
-      ${renderHistoryInsights(sessions)}
-      ${renderHistoryMiniTrends(sessions)}
       ${renderAICard(overall, t('compassTitle'))}
       <article class="card-xl"><div class="card-head"><h2>${t('archivedSessions')}</h2><button class="ghost-btn" onclick="RDR.clearHistory()">${t('clearHistory')}</button></div>${sessions.length ? sessions.map(renderHistoryItem).join('') : `<div class="why-read-card"><b>${t('whyHistoryTitle')}</b><p>${t('whyHistoryBody')}</p></div>`}</article>
       <article class="card-xl privacy"><h2>${t('privacyTitle')}</h2><p>${t('privacyText')}</p></article>
@@ -5722,7 +5679,7 @@ body.doc-compact .segmented { padding-top: 6px; }
     const doseInfo = totalKnownDose(s);
     const level = classifyDose(s.substance, doseInfo.total || s.dose, doseInfo.known);
     const alerts = scanHistoryForSession(s, state.sessions).slice(0, 2);
-    return `<div class="history-item"><div><b>${escapeHTML(sub.name)}</b><span>${new Date(s.startedAt).toLocaleString(localeDateCode(), {dateStyle:'medium', timeStyle:'short'})}</span></div><div><span class="badge ${level.className}">${doseInfo.known ? `${doseInfo.total || s.dose}${sub.unit}` : t('unknownDose')}</span></div>${alerts.map(a => `<p class="history-alert ${a.type}">${escapeHTML(a.text)}</p>`).join('')}${renderRecoveryCheckinBlock(s)}<div class="export-row"><button class="small-btn" onclick="RDR.reuseSession('${s.id}')">${t('reuseSession')}</button><button class="small-btn" onclick="RDR.exportSession('${s.id}')">${t('exportSession')}</button><button class="small-btn ghost" onclick="RDR.deleteSession('${s.id}')">${t('deleteSession')}</button></div></div>`;
+    return `<div class="history-item"><div><b>${escapeHTML(sub.name)}</b><span>${new Date(s.startedAt).toLocaleString(localeDateCode(), {dateStyle:'medium', timeStyle:'short'})}</span></div><div><span class="badge ${level.className}">${doseInfo.known ? `${doseInfo.total || s.dose}${sub.unit}` : t('unknownDose')}</span></div>${alerts.map(a => `<p class="history-alert ${a.type}">${escapeHTML(a.text)}</p>`).join('')}<button class="small-btn" onclick="RDR.reuseSession('${s.id}')">${t('reuseSession')}</button><button class="small-btn ghost" onclick="RDR.deleteSession('${s.id}')">${t('deleteSession')}</button></div>`;
   }
 
   function buildOverallHistoryAI(sessions) {
@@ -5950,9 +5907,9 @@ body.doc-compact .segmented { padding-top: 6px; }
         alcohol = estimateAlcohol({ ...d, weight: state.active.weight, sex: state.active.sex });
         amount = Number(alcohol.std.toFixed(2)); known = true; display = `${alcohol.std.toFixed(1)} ${t('standardUnits')} · ${Math.round(alcohol.grams)} g`;
       } else if (subKey === 'cocaine' && d.inputMode === 'line') {
-        estimate = estimateLineMg(d.lineCm, d.lineSize || 'medium'); amount = ''; known = false; display = `≈ ${estimate.low}-${estimate.high} mg (${t('rangeOnlyNoMid')})`;
+        estimate = estimateLineMg(d.lineCm, d.lineSize || 'medium'); amount = estimate.mid; known = false; display = `≈ ${estimate.low}-${estimate.high} mg (${t('estimationOnly')})`;
       } else if (subKey === 'mdma' && d.inputMode === 'finger') {
-        estimate = estimateFingerMg(d.fingerSize || 'small'); amount = ''; known = false; display = `≈ ${estimate.low}-${estimate.high} mg (${t('rangeOnlyNoMid')})`;
+        estimate = estimateFingerMg(d.fingerSize || 'small'); amount = estimate.mid; known = false; display = `≈ ${estimate.low}-${estimate.high} mg (${t('estimationOnly')})`;
       }
       state.active.entries = (state.active.entries || []).concat({ kind: 'intake', substance: subKey, at, amount, known, display, estimate, alcohol, mode: d.note || d.inputMode || t('redoseDuringSession') });
       state.intakeDraft = { substance: state.active.substance, inputMode: 'weighed', amount: '', minutesAgo: '0', known: 'yes', note: '', alcoholType: 'beer', drinkCount: '1', drinkVolCl: '25', drinkAbv: '5', lineCm: '', lineSize: 'medium', fingerSize: 'small' };
@@ -5987,56 +5944,13 @@ body.doc-compact .segmented { padding-top: 6px; }
 
   window.RDR = RDR;
 
-
-  function exportSessionSummaryText(s) {
-    const sub = getSubstance(s.substance);
-    const doseInfo = totalKnownDose(s);
-    const pairs = sessionInteractionPairs(s).map(p => `${labelOf(p.a)} + ${labelOf(p.b)}: ${riskLabel(p.meta)}`);
-    const alc = aggregateAlcohol(s);
-    const lines = [
-      'TripSafe RdR — local session summary',
-      `${sub.name} — ${new Date(s.startedAt).toLocaleString(localeDateCode(), { dateStyle:'medium', timeStyle:'short' })}`,
-      `Dose: ${doseInfo.known ? (doseInfo.total + sub.unit) : t('unknownDose')}`,
-      `Entries: ${entryList(s).length}`,
-      alc.entries ? `Alcohol: ${alc.stdTotal.toFixed(1)} standard drinks · current BAC estimate ≈ ${alc.bacCurrent.toFixed(2)} g/L` : '',
-      pairs.length ? `Active/declared mixes: ${pairs.join(' / ')}` : 'Active/declared mixes: none in the local record',
-      `Recovery check-ins: ${Object.keys(state.recoveryCheckins[s.id] || {}).length}`,
-      'This is a local harm-reduction note with uncertainty; it never proves safety.'
-    ];
-    return lines.filter(Boolean).join('\n');
-  }
-
   // ===== v15 method overrides =====
   Object.assign(RDR, {
-    recoveryCheckin(sessionId, day) {
-      const note = prompt(t('checkinPrompt')) || '';
-      if (!note.trim()) return;
-      state.recoveryCheckins[sessionId] = state.recoveryCheckins[sessionId] || {};
-      state.recoveryCheckins[sessionId][day] = note.trim();
-      storage.setJSON(STORAGE.recoveryCheckins, state.recoveryCheckins);
-      RDR.toast(t('checkinSaved'));
-      render();
-    },
-    exportSession(id) {
-      const s = state.sessions.find(x => x.id === id);
-      if (!s) return;
-      const txt = exportSessionSummaryText(s);
-      if (navigator.clipboard?.writeText) navigator.clipboard.writeText(txt).then(() => RDR.toast(t('exportCopied'))).catch(() => RDR.toast(txt));
-      else RDR.toast(txt);
-    },
-    setLocalReminder(minutes) {
-      RDR.toast(t('reminderToast').replace('{n}', String(minutes)));
-    },
-    async checkRemoteVersion(manual=false) { await checkRemoteVersion(manual); },
-    async updateNow() {
+    updateNow() {
       RDR.toast(t('updateInstalling'));
-      try {
-        const reg = await navigator.serviceWorker?.getRegistration?.();
-        await reg?.update?.();
-        if (reg?.waiting) reg.waiting.postMessage({ type: 'SKIP_WAITING' });
-        if (navigator.serviceWorker?.controller) navigator.serviceWorker.controller.postMessage({ type: 'SKIP_WAITING' });
-      } catch {}
-      setTimeout(() => location.reload(), 700);
+      try { window.tripSafeSWRegistration?.update?.(); } catch(e) {}
+      if (navigator.serviceWorker?.controller) navigator.serviceWorker.controller.postMessage({ type: 'SKIP_WAITING' });
+      setTimeout(() => location.reload(), 500);
     },
     async forceResetCache() {
       try {
@@ -6046,8 +5960,7 @@ body.doc-compact .segmented { padding-top: 6px; }
         }
         const regs = await navigator.serviceWorker?.getRegistrations?.();
         if (regs) await Promise.all(regs.map(r => r.unregister()));
-        const base = location.href.split('#')[0].split('?')[0];
-        location.href = base + '?refresh=' + Date.now();
+        location.reload();
       } catch (e) { RDR.toast(t('updateFailed')); }
     },
     addIntake() {
@@ -6065,9 +5978,9 @@ body.doc-compact .segmented { padding-top: 6px; }
         alcohol = estimateAlcohol({ ...d, weight: state.active.weight, sex: state.active.sex });
         amount = Number(alcohol.std.toFixed(2)); known = true; display = `${alcohol.std.toFixed(1)} ${t('standardUnits')} · ${Math.round(alcohol.grams)} g`;
       } else if (subKey === 'cocaine' && d.inputMode === 'line') {
-        estimate = estimateLineMg(d.lineCm, d.lineSize || 'medium'); amount = ''; known = false; display = `≈ ${estimate.low}-${estimate.high} mg (${t('rangeOnlyNoMid')})`;
+        estimate = estimateLineMg(d.lineCm, d.lineSize || 'medium'); amount = estimate.mid; known = false; display = `≈ ${estimate.low}-${estimate.high} mg (${t('rangeOnlyNoMid')})`;
       } else if (subKey === 'mdma' && d.inputMode === 'finger') {
-        estimate = estimateFingerMg(d.fingerSize || 'small'); amount = ''; known = false; display = `≈ ${estimate.low}-${estimate.high} mg (${t('rangeOnlyNoMid')})`;
+        estimate = estimateFingerMg(d.fingerSize || 'small'); amount = estimate.mid; known = false; display = `≈ ${estimate.low}-${estimate.high} mg (${t('rangeOnlyNoMid')})`;
       } else if (d.inputMode === 'visual') {
         known = false; display = amount ? `${amount} ${sub.unit} (${t('nonWeighed')})` : t('unknownDose');
       }
@@ -6080,6 +5993,396 @@ body.doc-compact .segmented { padding-top: 6px; }
       render();
     }
   });
+
+
+  // ===== v16 exhaustive product / safety / GitHub update layer =====
+  STORAGE.recoveryCheckins = 'rdr_recovery_checkins';
+  STORAGE.lastGithubUpdateCheck = 'rdr_last_update_check';
+  Object.assign(i18n.fr, {
+    githubUpdateTitle: 'Mise à jour GitHub Pages', githubUpdateBody: 'L’app vérifie maintenant version.json à chaque lancement et peut débloquer le cache de l’icône écran d’accueil.', githubRemoteVersion: 'Version disponible', githubCurrentVersion: 'Version installée',
+    v15SprintLabel: 'v16 · Focus, cockpit, pédagogie progressive, cache GitHub', updateCheckNow: 'Vérifier la mise à jour', updateNoRemote: 'Impossible de vérifier la version distante — l’app reste utilisable offline.', updateAlreadyFresh: 'Version à jour.', updateFoundReload: 'Nouvelle version détectée — utilise “Mettre à jour maintenant”.',
+    learningPathsTitle: 'Parcours guidés', learningPathSafety: 'Sécurité maintenant', learningPathSafetySub: 'Cockpit, mélanges, incertitude, SOS.', learningPathRecovery: 'Récupération', learningPathRecoverySub: 'Sommeil, humeur, intégration, historique.', learningPathScience: 'Biologie utile', learningPathScienceSub: 'Pourquoi le mécanisme change la décision.',
+    whyNowTitle: 'Pourquoi ça compte maintenant', whyNowMdma: 'Les reprises, la chaleur et le rythme cardiaque changent le risque avant même que l’effet subjectif paraisse inquiétant. Rester prudent.', whyNowLsd: 'La durée et les boucles mentales comptent autant que l’intensité : prévoir du temps et réduire la stimulation évite d’amplifier l’anxiété. Rester prudent.', whyNowChamp: 'La variabilité du lot et l’état psychologique peuvent changer toute l’expérience : le cadre et l’intégration sont des données de sécurité. Rester prudent.', whyNowKetamine: 'La dissociation masque douleur, coordination et signaux cardio : l’environnement physique devient le premier garde-fou. Rester prudent.', whyNowAlcool: 'L’alcool altère jugement, mémoire et respiration, surtout en mélange : l’élimination est lente et non accélérable. Rester prudent.', whyNowCocaine: 'La montée brève pousse aux reprises alors que le cœur et les vaisseaux restent sollicités : surveiller les signaux cardio. Rester prudent.', whyNowDefault: 'Ce mécanisme sert à décider quoi surveiller, pas à rendre une prise sûre. Rester prudent.',
+    nextHourDynamicTitle: 'Prochaines 60 minutes', nextHourDynamicBody: 'Ce qui compte maintenant est calculé depuis l’horloge du téléphone, les prises déclarées et les mélanges actifs.', nextHourNoEntry: 'Aucune prise active fiable à projeter. Si une prise existe, l’ajouter améliore la lecture locale. Prudence.', nextHourMix: 'Mélange actif : surveiller surtout l’interaction, pas seulement chaque substance séparément.', nextHourAlcohol: 'Alcool actif : l’alcoolémie estimée peut encore monter si la prise est récente ; ne pas conduire.', nextHourCocaine: 'Cocaïne active : la redescente courte peut pousser à reprendre, alors que la charge cardio reste présente.', nextHourMdma: 'MDMA active : chaleur, cœur, hydratation et reprises priment sur la recherche du plateau.', nextHourKetamine: 'Kétamine active : rester assis ou allongé, éviter escaliers, eau, déplacements et mélanges dépresseurs.', nextHourPsy: 'Psychédélique actif : réduire les stimulations, garder un point d’ancrage calme et éviter les décisions importantes.',
+    checkinTitle: 'Check-in récupération', checkinSub: 'À utiliser après une session : sommeil, humeur, anxiété, énergie et envie de reprendre. Tout reste local.', checkinSleep: 'Sommeil', checkinMood: 'Humeur', checkinAnxiety: 'Anxiété', checkinEnergy: 'Énergie', checkinCraving: 'Envie de reprendre', checkinNote: 'Note récupération', saveCheckin: 'Enregistrer le check-in', checkinSaved: 'Check-in enregistré localement.', recoveryJ1: 'J+1 : sommeil, alimentation, calme, pas de nouvelle prise pour “corriger” une descente.', recoveryJ3: 'J+3 : regarder humeur, anxiété, motivation et envie de reprendre.', recoveryJ7: 'J+7 : intégrer, espacer, noter ce qui reste difficile. Si symptômes persistants, chercher du soutien.',
+    historyInsightsTitle: 'Lecture historique enrichie', historyFrequency: 'Fréquence', historyMixes: 'Mélanges', historyRecovery: 'Récupération', historyLearning: 'Apprentissage', sessionsLast30: 'sessions sur 30 jours', mixesArchived: 'sessions avec plusieurs substances ou co-usages', checkinsSaved: 'check-ins enregistrés', modulesProgressGlobal: 'modules lus au total', exportSummary: 'Exporter résumé local', exportCopied: 'Résumé copié.',
+    prepModeTitle: 'Préparation avant suivi', prepModeBody: 'Avant de lancer : produit identifié, heure claire, quantité ou incertitude assumée, personne de confiance, téléphone chargé. Ce n’est pas une validation de prise.',
+    knownEstimatedSplit: 'Ce que l’app sait / ce qu’elle estime', knownEstimatedBody: 'Les heures déclarées et les substances choisies sont des données. Les doigts, lignes, verres maison, doses visuelles et alcoolémies sont des estimations incertaines.', glossaryContextSession: 'Termes bleus : définitions courtes. En suivi, privilégie les signaux et les actions plutôt que les détails techniques.',
+    companionModeFull: 'Mode accompagnant complet', companionModeFullSub: 'Pour aider quelqu’un : vérifier respiration, conscience, température, substances et appeler si doute.',
+    optionalReminderTitle: 'Rappel local optionnel', optionalReminderBody: 'Pour cette version, pas de notification intrusive : utilise les check-ins et l’historique local. Rester prudent.'
+  });
+  Object.assign(i18n.en, {
+    githubUpdateTitle: 'GitHub Pages update', githubUpdateBody: 'The app now checks version.json at launch and can unlock the home-screen icon cache.', githubRemoteVersion: 'Available version', githubCurrentVersion: 'Installed version',
+    v15SprintLabel: 'v16 · Focus, cockpit, progressive learning, GitHub cache', updateCheckNow: 'Check update', updateNoRemote: 'Could not check the remote version — the app remains usable offline.', updateAlreadyFresh: 'Version is up to date.', updateFoundReload: 'New version detected — use “Update now”.',
+    learningPathsTitle: 'Guided paths', learningPathSafety: 'Safety now', learningPathSafetySub: 'Cockpit, mixes, uncertainty, SOS.', learningPathRecovery: 'Recovery', learningPathRecoverySub: 'Sleep, mood, integration, history.', learningPathScience: 'Useful biology', learningPathScienceSub: 'Why mechanisms change decisions.',
+    whyNowTitle: 'Why it matters now', whyNowMdma: 'Redosing, heat and heart rate change risk before the subjective effect feels alarming. Stay cautious.', whyNowLsd: 'Duration and thought loops matter as much as intensity: allowing time and reducing stimulation helps avoid escalating anxiety. Stay cautious.', whyNowChamp: 'Batch variability and psychological state can change the whole experience: setting and integration are safety data. Stay cautious.', whyNowKetamine: 'Dissociation masks pain, coordination and cardiovascular signals: the physical environment becomes the first safeguard. Stay cautious.', whyNowAlcool: 'Alcohol impairs judgement, memory and breathing, especially in mixes: elimination is slow and cannot be sped up. Stay cautious.', whyNowCocaine: 'The short rush pushes redosing while heart and vessels remain under load: monitor cardiovascular signals. Stay cautious.', whyNowDefault: 'This mechanism helps decide what to monitor; it never makes use safe. Stay cautious.',
+    nextHourDynamicTitle: 'Next 60 minutes', nextHourDynamicBody: 'What matters now is calculated from the phone clock, declared intakes and active mixes.', nextHourNoEntry: 'No reliable active intake to project. If an intake exists, adding it improves the local reading. Stay cautious.', nextHourMix: 'Active mix: monitor the interaction first, not only each substance separately.', nextHourAlcohol: 'Alcohol active: estimated BAC may still rise if intake was recent; do not drive.', nextHourCocaine: 'Cocaine active: the short comedown can push redosing while cardiovascular load remains.', nextHourMdma: 'MDMA active: heat, heart, hydration and redosing matter more than chasing the plateau.', nextHourKetamine: 'Ketamine active: stay seated or lying down; avoid stairs, water, movement and depressant mixes.', nextHourPsy: 'Psychedelic active: reduce stimulation, keep a calm anchor and avoid important decisions.',
+    checkinTitle: 'Recovery check-in', checkinSub: 'Use after a session: sleep, mood, anxiety, energy and craving. Everything stays local.', checkinSleep: 'Sleep', checkinMood: 'Mood', checkinAnxiety: 'Anxiety', checkinEnergy: 'Energy', checkinCraving: 'Craving', checkinNote: 'Recovery note', saveCheckin: 'Save check-in', checkinSaved: 'Check-in saved locally.', recoveryJ1: 'D+1: sleep, food, calm, no new use to “fix” a comedown.', recoveryJ3: 'D+3: look at mood, anxiety, motivation and craving.', recoveryJ7: 'D+7: integrate, space sessions, note what remains difficult. If symptoms persist, seek support.',
+    historyInsightsTitle: 'Enriched history reading', historyFrequency: 'Frequency', historyMixes: 'Mixes', historyRecovery: 'Recovery', historyLearning: 'Learning', sessionsLast30: 'sessions over 30 days', mixesArchived: 'sessions with multiple substances or co-use', checkinsSaved: 'check-ins saved', modulesProgressGlobal: 'modules read in total', exportSummary: 'Export local summary', exportCopied: 'Summary copied.',
+    prepModeTitle: 'Preparation before tracking', prepModeBody: 'Before starting: product identified, clear time, quantity or uncertainty acknowledged, trusted person, charged phone. This is not validation of use.',
+    knownEstimatedSplit: 'What the app knows / what it estimates', knownEstimatedBody: 'Declared times and selected substances are data. Fingers, lines, home pours, visual doses and BAC are uncertain estimates.', glossaryContextSession: 'Blue terms: short definitions. During tracking, prioritize signals and actions over technical detail.',
+    companionModeFull: 'Full companion mode', companionModeFullSub: 'To help someone: check breathing, consciousness, temperature, substances and call if unsure.',
+    optionalReminderTitle: 'Optional local reminder', optionalReminderBody: 'In this version, no intrusive notification: use check-ins and local history. Stay cautious.'
+  });
+
+  STORAGE.recoveryCheckins = 'rdr_recovery_checkins';
+  state.recoveryCheckins = storage.getJSON(STORAGE.recoveryCheckins, {});
+  state.remoteVersion = null;
+  state.lastUpdateCheck = storage.get(STORAGE.lastGithubUpdateCheck) || '';
+
+  function allModuleStats() {
+    let total = 0, read = 0;
+    for (const [subId, modules] of Object.entries(learningAtlas || {})) {
+      total += modules.length;
+      read += modules.filter((m, i) => moduleRead(subId, m, i)).length;
+    }
+    return { total, read };
+  }
+
+  function whyNowTextFor(subId) {
+    return t({ mdma: 'whyNowMdma', lsd: 'whyNowLsd', champignons: 'whyNowChamp', ketamine: 'whyNowKetamine', alcool: 'whyNowAlcool', cocaine: 'whyNowCocaine' }[subId] || 'whyNowDefault');
+  }
+
+  function renderWhyNowCard(subId) {
+    return `<div class="why-now-card"><b>${t('whyNowTitle')}</b><p>${wrapGlossaire(whyNowTextFor(subId))}</p></div>`;
+  }
+
+  function nextHourItems(session) {
+    const pairs = sessionInteractionPairs(session).filter(p => p.rank >= 4);
+    const keys = activeSubstanceKeys(session);
+    const items = [];
+    if (pairs.length) items.push([t('activeMixesTitle'), t('nextHourMix') + ' ' + pairs.slice(0,2).map(p => `${labelOf(p.a)} + ${labelOf(p.b)}`).join(' · ')]);
+    if (keys.includes('alcool')) items.push([labelOf('alcool'), t('nextHourAlcohol')]);
+    if (keys.includes('cocaine')) items.push([labelOf('cocaine'), t('nextHourCocaine')]);
+    if (keys.includes('mdma')) items.push([labelOf('mdma'), t('nextHourMdma')]);
+    if (keys.includes('ketamine')) items.push([labelOf('ketamine'), t('nextHourKetamine')]);
+    if (keys.some(k => ['lsd','champignons'].includes(k))) items.push([t('groupPsychClassic'), t('nextHourPsy')]);
+    if (!items.length) items.push([t('dataMissing'), t('nextHourNoEntry')]);
+    return items.slice(0, 5);
+  }
+
+  function renderNextHourCard(session) {
+    return `<article class="card-xl next-hour-card"><div class="card-head"><div><h2>${t('nextHourDynamicTitle')}</h2><p class="subtitle">${t('nextHourDynamicBody')}</p></div><span class="badge info">60 min</span></div><div class="next-hour-list">${nextHourItems(session).map(([a,b]) => `<div class="next-hour-item"><b>${escapeHTML(a)}</b><span>${wrapGlossaire(b)}</span></div>`).join('')}</div></article>`;
+  }
+
+  function renderLearningPaths() {
+    const cards = [
+      ['🧭','learningPathSafety','learningPathSafetySub',"RDR.go('session')"],
+      ['🌙','learningPathRecovery','learningPathRecoverySub',"RDR.go('history')"],
+      ['🧠','learningPathScience','learningPathScienceSub',"RDR.selectSubstance('mdma','neuro')"]
+    ];
+    return `<div class="section-title"><h2>${t('learningPathsTitle')}</h2></div><div class="learning-paths">${cards.map(([icon,k,sub,action]) => `<button class="learning-path-card" onclick="${action}"><i>${icon}</i><span><b>${t(k)}</b><small>${t(sub)}</small></span><span>›</span></button>`).join('')}</div>`;
+  }
+
+  function historyStatsHtml(sessions) {
+    const last30 = sessions.filter(s => (Date.now() - new Date(s.startedAt).getTime()) / 864e5 <= 30).length;
+    const mixes = sessions.filter(s => activeSubstanceKeys(s).length > 1 || (s.coUse || []).length).length;
+    const checkins = Object.keys(state.recoveryCheckins || {}).length;
+    const mods = allModuleStats();
+    return `<article class="card-xl"><h2>${t('historyInsightsTitle')}</h2><div class="history-insight-grid"><div class="history-insight"><b>${t('historyFrequency')}</b><span>${last30} ${t('sessionsLast30')}</span></div><div class="history-insight"><b>${t('historyMixes')}</b><span>${mixes} ${t('mixesArchived')}</span></div><div class="history-insight"><b>${t('historyRecovery')}</b><span>${checkins} ${t('checkinsSaved')}</span></div><div class="history-insight"><b>${t('historyLearning')}</b><span>${mods.read}/${mods.total} ${t('modulesProgressGlobal')}</span></div></div></article>`;
+  }
+
+  function renderRecoveryCheckin(sessionId = null) {
+    const id = sessionId || (state.sessions[0]?.id || 'general');
+    return `<article class="card-xl checkin-card"><h2>${t('checkinTitle')}</h2><p class="muted">${t('checkinSub')}</p><div class="checkin-grid"><label>${t('checkinSleep')}<input id="checkin-sleep-${escapeHTML(id)}" type="number" min="0" max="12" step="0.5" placeholder="h"></label><label>${t('checkinMood')}<input id="checkin-mood-${escapeHTML(id)}" type="number" min="1" max="5" step="1" placeholder="1-5"></label><label>${t('checkinAnxiety')}<input id="checkin-anxiety-${escapeHTML(id)}" type="number" min="1" max="5" step="1" placeholder="1-5"></label><label>${t('checkinEnergy')}<input id="checkin-energy-${escapeHTML(id)}" type="number" min="1" max="5" step="1" placeholder="1-5"></label><label>${t('checkinCraving')}<input id="checkin-craving-${escapeHTML(id)}" type="number" min="1" max="5" step="1" placeholder="1-5"></label><label>${t('checkinNote')}<textarea id="checkin-note-${escapeHTML(id)}" rows="2"></textarea></label></div><button class="ghost-btn full" onclick="RDR.saveRecoveryCheckin('${escapeHTML(id)}')">${t('saveCheckin')}</button><div class="recovery-timeline"><div class="step"><b>J+1 / D+1</b><p>${t('recoveryJ1')}</p></div><div class="step"><b>J+3 / D+3</b><p>${t('recoveryJ3')}</p></div><div class="step"><b>J+7 / D+7</b><p>${t('recoveryJ7')}</p></div></div></article>`;
+  }
+
+  function renderPreparationCard() {
+    return `<article class="card-xl prep-card"><h2>${t('prepModeTitle')}</h2><p class="muted">${t('prepModeBody')}</p><div class="uncertainty-pill-row"><span class="badge info">${t('knownEstimatedSplit')}</span><span class="badge warn">${t('uncertaintyTitle')}</span><span class="badge safe">${t('privacyTitle')}</span></div></article>`;
+  }
+
+  function localSessionSummary(s) {
+    const sub = getSubstance(s.substance);
+    const dose = totalKnownDose(s);
+    const pairs = sessionInteractionPairs(s).map(p => `${labelOf(p.a)} + ${labelOf(p.b)}: ${riskLabel(p.meta)}`);
+    const alc = aggregateAlcohol(s);
+    return [
+      `TripSafe local summary`,
+      `${sub.name} — ${new Date(s.startedAt).toLocaleString(localeDateCode(), { dateStyle:'medium', timeStyle:'short' })}`,
+      `Dose: ${dose.known ? (dose.total + sub.unit) : t('unknownDose')}`,
+      `Entries: ${entryList(s).length}`,
+      alc.entries ? `Alcohol estimate: ${alc.stdTotal.toFixed(1)} std · BAC now ~${alc.bacCurrent.toFixed(2)} g/L` : '',
+      pairs.length ? `Mixes: ${pairs.join(' / ')}` : `Mixes: none declared`,
+      `Note: estimates are uncertain and never prove safety.`
+    ].filter(Boolean).join('\n');
+  }
+
+  const previousRenderHome = renderHome;
+  renderHome = function() {
+    let html = previousRenderHome();
+    html = html.replace(`<div class="section-title"><h2>${t('sectionPsy')}</h2>`, `${renderLearningPaths()}<article class="card-xl update-status-card"><h2>${t('githubUpdateTitle')}</h2><p class="muted">${t('githubUpdateBody')}</p><p class="compact-note">${t('githubCurrentVersion')} : ${APP_VERSION}${state.remoteVersion ? ` · ${t('githubRemoteVersion')} : ${escapeHTML(state.remoteVersion)}` : ''}</p><button class="ghost-btn full" onclick="RDR.checkRemoteVersion(true)">${t('updateCheckNow')}</button></article><div class="section-title"><h2>${t('sectionPsy')}</h2>`);
+    return html;
+  };
+
+  const previousRenderNeuroDeep = renderNeuroDeep;
+  renderNeuroDeep = function(sub) {
+    let html = previousRenderNeuroDeep(sub);
+    html = html.replace(/(<div class="plain-stack">[\s\S]*?<\/div>)/g, (m) => m + renderWhyNowCard(sub.id));
+    return html;
+  };
+
+  renderSessionCockpit = function(session) {
+    const substancesActive = activeSubstanceKeys(session).map(k => `<span class="badge info">${escapeHTML(labelOf(k))}</span>`).join('') || `<span class="badge neutral">${escapeHTML(labelOf(session.substance))}</span>`;
+    const risk = currentMainRisk(session);
+    const u = sessionUncertainty(session); const um = uncertaintyMeta(u.level);
+    const alc = aggregateAlcohol(session);
+    return `<article class="card-xl cockpit-card"><div class="card-head"><div><h2>${t('sessionCockpitTitle')}</h2><p class="subtitle">${t('riskNotOnlyDose')}</p></div><span class="badge ${risk.type}">${t('mainCurrentRisk')}</span></div><div class="active-substances-row"><b>${t('activeSubstances')}</b><div>${substancesActive}</div></div><div class="alert ${risk.type}"><b>${escapeHTML(risk.title)}</b><p>${wrapGlossaire(risk.body)}</p><p class="compact-note">${escapeHTML(risk.action || t('mixAlertAction'))}</p></div><div class="alert ${um.cls}"><b>${t('uncertaintyTitle')} — ${escapeHTML(um.title)}</b><p>${escapeHTML(um.body)}</p>${u.reasons.length ? `<p class="compact-note">${escapeHTML(u.reasons.join(' · '))}</p>` : ''}</div><div class="session-helper-note"><b>${t('knownEstimatedSplit')}</b><br>${t('knownEstimatedBody')} ${t('glossaryContextSession')}</div>${alc.entries ? `<div class="alert info"><b>${t('alcoholCumulativeTitle')}</b><p>${t('alcoholTotalStd')} : ${alc.stdTotal.toFixed(1)} · ${t('alcoholCurrentBac')} ≈ ${alc.bacCurrent.toFixed(2)} g/L</p><p class="compact-note">${t('alcoholMultiEntry')} ${t('bacLimitFranceShort')} ${t('alcoholNoDriveStrong')}</p></div>` : ''}</article>`;
+  };
+
+  renderSessionTabNow = function(session, sub, phase, elapsed, level) {
+    return `<div class="stack">${renderSessionCockpit(session)}${renderNextHourCard(session)}<article class="card-xl"><div class="card-head"><h2>${t('whereAmI')}</h2><span class="badge ${level.className}">${escapeHTML(doseLabel(level))}</span></div>${renderTimeline(session.substance, elapsed, new Date(session.startedAt))}${renderAICard(buildSessionAI(session), t('compassTitle'))}</article>${renderPhaseClockCards(session)}${renderSessionInteractionCards(session)}${renderCompanionMini()}<article class="card-xl"><h2>${t('currentPhase')} ${escapeHTML(phaseLabel(phase.key))}</h2><div class="phase-card active" style="margin:0;"><span>${escapeHTML(phaseLabel(phase.key))}</span><p>${wrapGlossaire(sub.phases[phase.key] || '')}</p></div><details style="margin-top:10px;"><summary class="details-summary">${t('allPhasesDetails')}</summary><div class="phase-cards" style="margin-top:8px;">${Object.entries(sub.phases).map(([k, txt]) => `<div class="phase-card ${k === phase.key ? 'active' : ''}"><span>${phaseLabel(k)}</span><p>${wrapGlossaire(txt)}</p></div>`).join('')}</div></details></article></div>`;
+  };
+
+  const previousRenderSessionOnboarding = renderSessionOnboarding;
+  renderSessionOnboarding = function() {
+    let html = previousRenderSessionOnboarding();
+    html = html.replace(`<article class="card-xl quick-start-card">`, `${renderPreparationCard()}<article class="card-xl quick-start-card">`);
+    return html;
+  };
+
+  const previousRenderHistory = renderHistory;
+  renderHistory = function() {
+    let html = previousRenderHistory();
+    html = html.replace(`<article class="card-xl privacy"><h2>${t('privacyTitle')}</h2>`, `${historyStatsHtml(state.sessions)}${renderRecoveryCheckin(state.sessions[0]?.id || 'general')}<article class="card-xl privacy"><h2>${t('privacyTitle')}</h2>`);
+    return html;
+  };
+
+  const previousRenderHistoryItem = renderHistoryItem;
+  renderHistoryItem = function(s) {
+    let html = previousRenderHistoryItem(s);
+    html = html.replace(`</div>`, `<div class="export-row"><button class="small-btn ghost" onclick="RDR.exportSessionSummary('${s.id}')">${t('exportSummary')}</button></div></div>`);
+    return html;
+  };
+
+  const previousBuildDocAI = buildDocAI;
+  buildDocAI = function(subKey) {
+    const lines = previousBuildDocAI(subKey);
+    const atlas = learningAtlas[subKey] || [];
+    const readCount = atlas.filter((m,i) => moduleRead(subKey,m,i)).length;
+    lines.push(isEn() ? `Learning path: ${readCount}/${atlas.length} biology modules read. The next useful step is to connect one mechanism to one practical signal. Stay cautious.` : `Parcours : ${readCount}/${atlas.length} modules de biologie parcourus. La prochaine étape utile est de relier un mécanisme à un signal concret. Rester prudent.`);
+    return lines;
+  };
+
+  Object.assign(RDR, {
+    async checkRemoteVersion(manual=false) {
+      try {
+        const res = await fetch('./version.json?ts=' + Date.now(), { cache: 'no-store' });
+        const data = await res.json();
+        state.remoteVersion = data.version || '';
+        state.lastUpdateCheck = new Date().toISOString();
+        storage.set(STORAGE.lastGithubUpdateCheck, state.lastUpdateCheck);
+        if (data.version && data.version !== APP_VERSION) { state.pwaUpdateAvailable = true; if (manual) RDR.toast(t('updateFoundReload')); }
+        else if (manual) RDR.toast(t('updateAlreadyFresh'));
+        render();
+      } catch (e) { if (manual) RDR.toast(t('updateNoRemote')); }
+    },
+    saveRecoveryCheckin(id) {
+      const read = key => document.getElementById(`checkin-${key}-${id}`)?.value || '';
+      state.recoveryCheckins[id] = { id, at: new Date().toISOString(), sleep: read('sleep'), mood: read('mood'), anxiety: read('anxiety'), energy: read('energy'), craving: read('craving'), note: read('note') };
+      storage.setJSON(STORAGE.recoveryCheckins, state.recoveryCheckins);
+      RDR.toast(t('checkinSaved'));
+      render();
+    },
+    exportSessionSummary(id) {
+      const s = state.sessions.find(x => x.id === id);
+      if (!s) return;
+      const txt = localSessionSummary(s);
+      navigator.clipboard?.writeText(txt).then(() => RDR.toast(t('exportCopied'))).catch(() => { RDR.toast(txt); });
+    }
+  });
+
+  RDR.checkRemoteVersion(false);
+
+
+
+
+  // ===== v16 Focus layer: intention-first UX, 60-second summaries, mini-lessons =====
+  Object.assign(i18n.fr, {
+    v16IntentQuestion: 'Tu veux faire quoi maintenant ?',
+    v16IntentSub: 'Choisis une intention. Le détail reste disponible, mais l’app montre d’abord l’essentiel.',
+    v16UnderstandTitle: 'Comprendre vite',
+    v16UnderstandSub: 'Une substance en 60 secondes, puis le fond complet si tu veux.',
+    v16TrackTitle: 'Suivre maintenant',
+    v16TrackSub: 'Cockpit, mélanges actifs, incertitude et prochaine heure.',
+    v16HelpTitle: 'J’aide quelqu’un',
+    v16HelpSub: 'Conscience, respiration, chaleur, infos utiles, SOS.',
+    v16MixTitle: 'Vérifier un mélange',
+    v16MixSub: 'Deux substances, un risque lisible, une action prudente.',
+    v16PromiseTitle: 'Le principe v16',
+    v16PromiseBody: 'Garder le fond scientifique, mais afficher d’abord ce qui aide à décider : signal, risque, action, puis explication.',
+    v16LibrarySummary: 'Bibliothèque complète des substances',
+    v16Essential60: 'Essentiel en 60 secondes',
+    v16Effect: 'Effet principal',
+    v16Risk: 'Risque principal',
+    v16Watch: 'À surveiller',
+    v16Recovery: 'Récupération',
+    v16UnderstandScheme: 'Comprendre en schéma',
+    v16DeepCore: 'Fond complet et explications neuro',
+    v16CoreIntro: 'Le contenu complet est conservé ici. Lis seulement si tu veux approfondir.',
+    v16FastTakeaway: 'À retenir',
+    v16InBody: 'Dans le corps',
+    v16WhyRisk: 'Pourquoi ça peut compter',
+    v16Action: 'Action prudente',
+    v16CoreExplanation: 'Explication complète',
+    v16ExpertDetail: 'Détail expert',
+    v16OneThing: 'Si tu ne retiens qu’une chose',
+    v16KnownEstimated: 'Ce qu’on sait / ce qu’on estime',
+    v16StartDoc: 'Choisir une fiche',
+    v16OpenSession: 'Ouvrir le suivi',
+    v16OpenMix: 'Ouvrir les interactions',
+    v16Aha: 'Objectif : comprendre sans mur de texte.',
+    v16KeepReading: 'Voir le fond complet',
+    v16ReadLess: 'Replier le fond complet',
+    v16MiniPath: 'Parcours court',
+    v16SessionFocusTitle: 'Maintenant : quoi faire en premier ?',
+    v16SessionFocusBody: 'Le cockpit met en haut la substance active, le risque principal, l’incertitude et la prochaine heure. Les détails restent en dessous.',
+    v16NoWall: 'Pas de mur de texte : résumé, action, puis détail si besoin.',
+    v16CoreKept: 'Core neuro conservé',
+    v16CoreKeptBody: 'Les explications SERT, VMAT2, 5‑HT2A, NMDA, GABA, alcoolémie et interactions restent accessibles dans les détails.',
+    v16ReadPathScience: 'Parcours biologie',
+    v16ReadPathMix: 'Parcours mélanges',
+    v16ReadPathRecovery: 'Parcours récupération',
+    v16ReadPathSupport: 'Parcours accompagnement'
+  });
+  Object.assign(i18n.en, {
+    v16IntentQuestion: 'What do you want to do now?',
+    v16IntentSub: 'Pick an intention. The full detail remains available, but the app shows the essential layer first.',
+    v16UnderstandTitle: 'Understand fast',
+    v16UnderstandSub: 'One substance in 60 seconds, then the full science if you want it.',
+    v16TrackTitle: 'Track now',
+    v16TrackSub: 'Cockpit, active mixes, uncertainty and the next hour.',
+    v16HelpTitle: 'I’m helping someone',
+    v16HelpSub: 'Consciousness, breathing, heat, useful info, SOS.',
+    v16MixTitle: 'Check a mix',
+    v16MixSub: 'Two substances, readable risk, cautious action.',
+    v16PromiseTitle: 'The v16 principle',
+    v16PromiseBody: 'Keep the scientific depth, but show first what helps decision-making: signal, risk, action, then explanation.',
+    v16LibrarySummary: 'Full substance library',
+    v16Essential60: '60-second essential',
+    v16Effect: 'Main effect',
+    v16Risk: 'Main risk',
+    v16Watch: 'Watch for',
+    v16Recovery: 'Recovery',
+    v16UnderstandScheme: 'Understand with a diagram',
+    v16DeepCore: 'Full background and neuro explanations',
+    v16CoreIntro: 'The full content is preserved here. Read it only if you want to go deeper.',
+    v16FastTakeaway: 'Key takeaway',
+    v16InBody: 'In the body',
+    v16WhyRisk: 'Why it can matter',
+    v16Action: 'Cautious action',
+    v16CoreExplanation: 'Full explanation',
+    v16ExpertDetail: 'Expert detail',
+    v16OneThing: 'If you remember one thing',
+    v16KnownEstimated: 'What is known / what is estimated',
+    v16StartDoc: 'Choose a sheet',
+    v16OpenSession: 'Open tracking',
+    v16OpenMix: 'Open interactions',
+    v16Aha: 'Goal: understand without a wall of text.',
+    v16KeepReading: 'See full background',
+    v16ReadLess: 'Collapse full background',
+    v16MiniPath: 'Short path',
+    v16SessionFocusTitle: 'Now: what comes first?',
+    v16SessionFocusBody: 'The cockpit puts active substances, main risk, uncertainty and the next hour at the top. Details stay below.',
+    v16NoWall: 'No wall of text: summary, action, then detail if needed.',
+    v16CoreKept: 'Neuro core preserved',
+    v16CoreKeptBody: 'SERT, VMAT2, 5‑HT2A, NMDA, GABA, BAC and interaction explanations remain available in details.',
+    v16ReadPathScience: 'Biology path',
+    v16ReadPathMix: 'Mixes path',
+    v16ReadPathRecovery: 'Recovery path',
+    v16ReadPathSupport: 'Support path'
+  });
+
+  function v16Pick(fr, en) { return isEn() ? en : fr; }
+  function v16Sentences(text, count = 1) {
+    const raw = String(text || '').replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+    if (!raw) return '';
+    const parts = raw.match(/[^.!?]+[.!?]+|[^.!?]+$/g) || [raw];
+    return parts.slice(0, count).join(' ').trim();
+  }
+  function v16Trim(text, max = 190) {
+    const s = String(text || '').replace(/\s+/g, ' ').trim();
+    return s.length > max ? s.slice(0, max - 1).trim() + '…' : s;
+  }
+  function v16Essentials(sub) {
+    const data = {
+      mdma: {
+        effect: ['Empathie, énergie et chaleur émotionnelle via libération massive de sérotonine.', 'Empathy, energy and emotional warmth through massive serotonin release.'],
+        risk: ['Chaleur, cœur, reprises, mélanges stimulants et récupération sérotonine.', 'Heat, heart load, redosing, stimulant mixes and serotonin recovery.'],
+        watch: ['Température, BPM, hydratation normale, descente, envie de reprendre.', 'Temperature, BPM, normal hydration, come-down, urge to redose.'],
+        recovery: ['Sommeil, calme, nourriture, plusieurs jours de récupération. Prudence.', 'Sleep, calm, nourishing food, several days of recovery. Stay cautious.']
+      },
+      lsd: {
+        effect: ['Perception, temps et pensée changent via 5‑HT2A et filtrage thalamique.', 'Perception, time and thought shift through 5‑HT2A and thalamic filtering.'],
+        risk: ['Durée longue, boucles, lithium, cannabis, décisions trop rapides.', 'Long duration, loops, lithium, cannabis, rushed decisions.'],
+        watch: ['Anxiété, déréalisation, stimulation excessive, fatigue, lendemain.', 'Anxiety, derealization, overstimulation, fatigue, next day.'],
+        recovery: ['Intégration narrative, sommeil, environnement calme, 24–48h sans décisions majeures. Prudence.', 'Narrative integration, sleep, calm environment, 24–48h without major decisions. Stay cautious.']
+      },
+      champignons: {
+        effect: ['Psilocybine convertie en psilocine : expérience variable selon lot, corps et contexte.', 'Psilocybin converts to psilocin: experience varies by batch, body and context.'],
+        risk: ['Variabilité, nausée, dissolution de l’ego, anxiété ou déréalisation.', 'Variability, nausea, ego dissolution, anxiety or derealization.'],
+        watch: ['Montée émotionnelle, environnement, intensité, besoin de calme.', 'Emotional come-up, environment, intensity, need for calm.'],
+        recovery: ['Afterglow possible, rêves intenses, écriture/intégration, sommeil. Prudence.', 'Possible afterglow, intense dreams, writing/integration, sleep. Stay cautious.']
+      },
+      ketamine: {
+        effect: ['Dissociation par blocage NMDA : corps, espace et douleur deviennent moins lisibles.', 'Dissociation through NMDA blockade: body, space and pain become less readable.'],
+        risk: ['Chutes, alcool/GHB/benzos, cœur paradoxal, vessie et mémoire à répétition.', 'Falls, alcohol/GHB/benzos, cardiovascular paradox, bladder and memory with repetition.'],
+        watch: ['Coordination, somnolence, respiration, vessie, déplacements.', 'Coordination, drowsiness, breathing, bladder, movement.'],
+        recovery: ['Repos, hydratation normale, éviter sédatifs et usage rapproché. Prudence.', 'Rest, normal hydration, avoid sedatives and frequent use. Stay cautious.']
+      },
+      alcool: {
+        effect: ['Désinhibition qui masque une dépression globale du système nerveux.', 'Disinhibition that masks global nervous system depression.'],
+        risk: ['Jugement, mémoire, respiration, conduite, mélanges dépresseurs et sevrage.', 'Judgement, memory, breathing, driving, depressant mixes and withdrawal.'],
+        watch: ['Nombre de verres, somnolence, vomissements, black-out, respiration.', 'Number of drinks, drowsiness, vomiting, blackout, breathing.'],
+        recovery: ['Élimination lente, sommeil perturbé, alcoolémie estimée jamais suffisante pour conduire. Prudence.', 'Slow clearance, disrupted sleep, estimated BAC never proves fitness to drive. Stay cautious.']
+      },
+      cocaine: {
+        effect: ['Blocage DAT/NET/SERT : stimulation courte, confiance, vigilance et craving.', 'DAT/NET/SERT blockade: short stimulation, confidence, alertness and craving.'],
+        risk: ['Cœur, vaisseaux, alcool, reprises rapprochées, lévamisole et anxiété.', 'Heart, vessels, alcohol, close redosing, levamisole and anxiety.'],
+        watch: ['Douleur thoracique, palpitations, paranoïa, envie de reprendre.', 'Chest pain, palpitations, paranoia, urge to redose.'],
+        recovery: ['Crash dopaminergique, sommeil, humeur, craving ; éviter stimulants. Prudence.', 'Dopamine crash, sleep, mood, craving; avoid stimulants. Stay cautious.']
+      }
+    };
+    const d = data[sub.id] || {};
+    return { effect: v16Pick(d.effect?.[0] || v16Sentences(sub.overview), d.effect?.[1] || v16Sentences(sub.overview)), risk: v16Pick(d.risk?.[0] || sub.risk, d.risk?.[1] || sub.risk), watch: v16Pick(d.watch?.[0] || v16Sentences((sub.heart || [])[0]?.body || (sub.heart || [])[0], 1), d.watch?.[1] || v16Sentences((sub.heart || [])[0]?.body || (sub.heart || [])[0], 1)), recovery: v16Pick(d.recovery?.[0] || v16Sentences(sub.recovery?.between, 1), d.recovery?.[1] || v16Sentences(sub.recovery?.between, 1)) };
+  }
+  function renderV16Essential(sub) {
+    const e = v16Essentials(sub);
+    return `<article class="card-xl v16-essential"><div class="v16-essential-head"><div><span class="eyebrow">${t('v16Essential60')}</span><h2>${escapeHTML(sub.name)}</h2><p>${escapeHTML(labelText(sub.cardDescription) || sub.className)}</p></div><span class="badge ${sub.color}">${fmtRange(sub.durations.total)}</span></div><div class="v16-essential-grid"><div class="v16-essential-item"><b>① ${t('v16Effect')}</b><p>${wrapGlossaire(e.effect)}</p></div><div class="v16-essential-item"><b>② ${t('v16Risk')}</b><p>${wrapGlossaire(e.risk)}</p></div><div class="v16-essential-item"><b>③ ${t('v16Watch')}</b><p>${wrapGlossaire(e.watch)}</p></div><div class="v16-essential-item"><b>④ ${t('v16Recovery')}</b><p>${wrapGlossaire(e.recovery)}</p></div></div><div class="v16-essential-actions"><button class="primary-btn" onclick="RDR.setDocTab('neuro')">${t('v16UnderstandScheme')}</button><button class="ghost-btn" onclick="RDR.go('session')">${t('v16OpenSession')}</button></div></article>`;
+  }
+  function renderV16IntentCards() {
+    return `<div class="v16-intent-title"><h2>${t('v16IntentQuestion')}</h2><p>${t('v16IntentSub')}</p></div><div class="intent-grid"><button class="intent-card primary" onclick="RDR.go('doc')"><i>◐</i><span><b>${t('v16UnderstandTitle')}</b><span>${t('v16UnderstandSub')}</span></span></button><button class="intent-card" onclick="RDR.go('session')"><i>●</i><span><b>${t('v16TrackTitle')}</b><span>${t('v16TrackSub')}</span></span></button><button class="intent-card danger" onclick="RDR.openCompanion()"><i>🆘</i><span><b>${t('v16HelpTitle')}</b><span>${t('v16HelpSub')}</span></span></button><button class="intent-card warn" onclick="RDR.go('interactions')"><i>⚡</i><span><b>${t('v16MixTitle')}</b><span>${t('v16MixSub')}</span></span></button></div>`;
+  }
+  function renderV16LearningPaths() {
+    return `<article class="card-xl"><div class="card-head"><div><h2>${t('learningPathsTitle')}</h2><p class="subtitle">${t('v16NoWall')}</p></div><span class="badge info">${t('v16MiniPath')}</span></div><div class="v16-path-row"><button class="learning-path-card" onclick="RDR.selectSubstance('mdma','neuro')"><i>🧠</i><span><b>${t('v16ReadPathScience')}</b><small>SERT · 5‑HT2A · NMDA</small></span><span>›</span></button><button class="learning-path-card" onclick="RDR.go('interactions')"><i>⚡</i><span><b>${t('v16ReadPathMix')}</b><small>${t('quickPairsTitle')}</small></span><span>›</span></button><button class="learning-path-card" onclick="RDR.go('history')"><i>🌙</i><span><b>${t('v16ReadPathRecovery')}</b><small>J+1 · J+3 · J+7</small></span><span>›</span></button><button class="learning-path-card" onclick="RDR.openCompanion()"><i>🆘</i><span><b>${t('v16ReadPathSupport')}</b><small>112 · 15 · ${t('safeSpace')}</small></span><span>›</span></button></div></article>`;
+  }
+
+  renderHome = function() {
+    const registry = typeof SUBSTANCE_REGISTRY !== 'undefined' ? SUBSTANCE_REGISTRY : {};
+    const psy = Object.keys(registry).filter(k => registry[k].category === 'psy').map(k => substances[k]).filter(Boolean);
+    const stimDep = Object.keys(registry).filter(k => registry[k].category === 'stimDep').map(k => substances[k]).filter(Boolean);
+    return `<section class="v16-home"><div class="hero wow-card"><div class="orbital"><span></span><span></span><span></span></div><div class="hero-copy"><span class="eyebrow">${t('homeEyebrow')}</span><h1>${t('homeTitle')}</h1><p>${t('homeSubtitle')}</p></div></div>${renderV16IntentCards()}<div class="v16-promise-card"><b>${t('v16PromiseTitle')}</b><p>${t('v16PromiseBody')}</p></div>${state.pwaUpdateAvailable ? renderPWAUpdateBanner() : ''}${state.contentUpdateAvailable ? `<div class="alert info">${t('newContentAvailable')}</div>` : ''}${state.expert ? `<p class="compact-note" style="text-align:center;color:var(--info);">${t('expertActiveNote')}</p>` : ''}${renderV16LearningPaths()}<details class="v16-compact-library"><summary>${t('v16LibrarySummary')}</summary><div class="section-title"><h2>${t('sectionPsy')}</h2><p>${t('substanceSubtitle')}</p></div><div class="substance-grid">${psy.map(s => renderSubstanceCard(s)).join('')}</div><div class="section-title"><h2>${t('sectionStimDep')}</h2><p>${t('sectionStimDepSub')}</p></div><div class="substance-grid substance-grid-secondary">${stimDep.map(s => renderSubstanceCard(s)).join('')}</div></details><div class="ai-card card-xl assistant-trigger" role="button" tabindex="0" onclick="RDR.openGuide()" onkeydown="if(event.key==='Enter'||event.key===' '){RDR.openGuide()}"><div class="compass-icon">↗</div><div><h3>${t('compassTitle')}</h3><p>${t('compassSub')}</p><p class="compact-note" style="margin-top:6px;">${compassHomeHistoryText()}</p></div></div><article class="card-xl update-status-card"><h2>${t('githubUpdateTitle')}</h2><p class="muted">${t('githubUpdateBody')}</p><p class="compact-note">${t('githubCurrentVersion')} : ${APP_VERSION}${state.remoteVersion ? ` · ${t('githubRemoteVersion')} : ${escapeHTML(state.remoteVersion)}` : ''}</p><button class="ghost-btn full" onclick="RDR.checkRemoteVersion(true)">${t('updateCheckNow')}</button></article></section>`;
+  };
+
+  const v16PreviousDocOverview = renderDocOverview;
+  renderDocOverview = function(sub) {
+    return `<div class="stack">${scientificNote()}${renderV16Essential(sub)}<article class="card-xl"><h2>${t('v16KnownEstimated')}</h2><p class="muted">${t('knownEstimatedBody') || t('v16CoreKeptBody')}</p><div class="v16-essential-actions"><button class="ghost-btn" onclick="RDR.setDocTab('dose')">${t('tabDose')}</button><button class="ghost-btn" onclick="RDR.setDocTab('mix')">${t('tabInteractions')}</button></div></article><details class="v16-core-details"><summary>${t('v16DeepCore')} — ${t('v16KeepReading')}</summary><div class="v16-core-inner"><p class="compact-note">${t('v16CoreIntro')}</p>${v16PreviousDocOverview(sub)}</div></details></div>`;
+  };
+
+  renderNeuroDeep = function(sub) {
+    const modules = learningAtlas[sub.id] || learningAtlas[chartKey(sub.id)] || [];
+    if (modules.length === 0) {
+      return `<div class="stack"><article class="card-xl"><h2>${t('neuroTitle')}</h2><p class="muted">${t('neuroEmptyLong')} ${escapeHTML(sub.short)}.</p><button class="ghost-btn" onclick="RDR.setDocTab('overview')">${t('neuroBack')}</button></article></div>`;
+    }
+    const total = modules.length;
+    const read = modules.filter((m, i) => moduleRead(sub.id, m, i)).length;
+    const progressBadge = `<span id="module-progress-${sub.id}" class="badge ${read === total ? 'safe' : 'info'}">${read}/${total}</span>`;
+    return `<div class="stack"><article class="card-xl v16-neuro-header"><div class="card-head"><div><h2>${t('neuroTitle')}</h2><p class="subtitle">${t('v16Aha')}</p></div>${progressBadge}</div><div class="mode-toggle-row"><button class="${!state.expert ? 'active' : ''}" onclick="RDR.setExpert(false)">${t('modeSimple')}</button><button class="${state.expert ? 'active' : ''}" onclick="RDR.setExpert(true)">${t('modeExpert')}</button><span class="subtitle">${t('v16CoreKept')}</span></div></article><div class="neuro-grid">${modules.map((m, idx) => { const plain = m.plain || []; const expert = m.expert || []; const isLast = idx === modules.length - 1; const nextModule = !isLast ? modules[idx + 1] : null; const lead = v16Sentences(plain[0] || m.subtitle || m.title, 1); const bodyItems = plain.slice(1, 3); const systemLabel = m.critical ? t('urgentMedical') : escapeHTML(m.system || t('brainDefault')); return `<article class="card-xl deep-card neuro-module ${m.critical ? 'neuro-module-critical danger-zone' : ''}" data-sub="${sub.id}" id="neuro-module-${sub.id}-${idx}"><div class="module-step-label">${t('moduleStepLabel')} ${idx + 1}/${modules.length}</div><div class="card-head"><div><h2>${escapeHTML(m.title)}</h2><p class="subtitle">${escapeHTML(m.subtitle || '')}</p></div><span class="deep-pill ${m.critical ? 'badge critical' : ''}">${systemLabel}</span></div>${renderMechanismSvg(sub, m.visual || 'receptor', 0)}${(sub.id === 'alcool' && /sevrage|Delirium/i.test(m.title || '')) ? '<a class="call-btn full" href="tel:15">🚨 ' + t('samuEmergency') + '</a>' : ''}<div class="v16-mini-lesson"><div class="v16-lesson-card lead"><b>${t('v16FastTakeaway')}</b><p>${wrapGlossaire(lead)}</p></div><div class="v16-lesson-card"><b>${t('v16InBody')}</b>${bodyItems.length ? `<ul>${bodyItems.map(x => `<li>${wrapGlossaire(v16Trim(x, 190))}</li>`).join('')}</ul>` : `<p>${wrapGlossaire(v16Sentences(plain[0] || '', 2))}</p>`}</div><div class="v16-lesson-card warn"><b>${t('v16WhyRisk')}</b><p>${wrapGlossaire(whyItMattersNowText(sub.id, m, idx))}</p></div><div class="v16-lesson-card action"><b>${t('v16Action')}</b><p>${wrapGlossaire(t('v16NoWall'))}</p></div></div><details class="v16-core-details" ontoggle="if(this.open){RDR.markModuleRead('${sub.id}',${idx})}"><summary>${t('v16CoreExplanation')} — ${t('v16KeepReading')}</summary><div class="v16-core-inner"><div class="v16-core-plain">${plain.map(x => `<p>${wrapGlossaire(x)}</p>`).join('')}</div></div></details><details ${state.expert ? 'open' : ''} ontoggle="if(this.open){RDR.markModuleRead('${sub.id}',${idx})}"><summary class="details-summary"><span class="badge info expert-pill">🔬</span> ${t('v16ExpertDetail')}</summary><ul>${expert.map(x => `<li>${wrapGlossaire(x)}</li>`).join('')}</ul></details>${nextModule ? `<button class="ghost-btn full" style="margin-top:12px;" onclick="RDR.markModuleRead('${sub.id}',${idx}); (function(){ const el = document.getElementById('neuro-module-${sub.id}-${idx + 1}'); if(el){ const top = el.getBoundingClientRect().top + window.scrollY - 140; window.scrollTo({top, behavior:'smooth'}); }})()">${t('nextModule')} : ${escapeHTML(nextModule.title)} →</button>` : `<div class="alert safe" style="margin-top:12px;text-align:center;font-weight:900;">✓ ${t('allModulesRead').replace('{sub}', escapeHTML(sub.short))}</div><button class="ghost-btn full" onclick="RDR.setDocTab('recovery')">${t('ctaRecovery')}</button>`}</article>`; }).join('')}</div></div>`;
+  };
+
+  const v16PreviousSessionTabNow = renderSessionTabNow;
+  renderSessionTabNow = function(session, sub, phase, elapsed, level) {
+    return `<div class="stack"><article class="card-xl v16-promise-card"><b>${t('v16SessionFocusTitle')}</b><p>${t('v16SessionFocusBody')}</p></article>${v16PreviousSessionTabNow(session, sub, phase, elapsed, level)}</div>`;
+  };
 
 
   window.addEventListener('beforeinstallprompt', (e) => {
@@ -6096,10 +6399,9 @@ body.doc-compact .segmented { padding-top: 6px; }
       location.reload();
     });
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('./service-worker.js?v=' + encodeURIComponent(APP_VERSION), { updateViaCache: 'none' }).then(reg => {
+      navigator.serviceWorker.register('./service-worker.js').then(reg => {
         window.tripSafeSWRegistration = reg;
         reg.update().catch(() => {});
-        checkRemoteVersion();
         if (reg.waiting) { state.pwaUpdateAvailable = true; render(); }
         reg.addEventListener('updatefound', () => {
           const worker = reg.installing;
@@ -6133,7 +6435,6 @@ body.doc-compact .segmented { padding-top: 6px; }
     }
   });
   render();
-  checkRemoteVersion();
   if (state.active) startTimerLoop();
 })();
 </script>
