@@ -1,4 +1,3 @@
-# Crédits
+# Credits
 
-TripSafe RdR est un prototype pédagogique de réduction des risques.
-Sources de contenu et d’orientation : manuel SPF, TripSit, documents d’audit internes du projet et littérature RdR. Ce prototype ne remplace pas un avis médical ni les secours.
+TripSafe RdR est un outil pédagogique de biologie et de réduction des risques. Les contenus s'appuient notamment sur les documents de travail fournis et le manuel SPF cité dans l'app.

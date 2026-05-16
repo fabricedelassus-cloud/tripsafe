@@ -1,20 +1,20 @@
-# TripSafe RdR v16 — GitHub Pages
+# TripSafe RdR v16.1
 
-Version Focus : home par intention, fiches en 60 secondes, modules Neuro en mini-leçons, contenu scientifique complet conservé dans les détails, cockpit Suivi et cache PWA anti-version bloquée.
+PWA statique prête pour GitHub Pages.
 
 ## Déploiement
 
-1. Déposer tout le contenu de ce dossier à la racine du repo GitHub.
-2. Activer GitHub Pages sur `main` / root, ou utiliser le workflow inclus.
-3. Ouvrir l’URL HTTPS GitHub Pages sur mobile.
-4. Ajouter à l’écran d’accueil.
+Dépose tout le contenu de ce dossier à la racine du repo GitHub Pages. Publie toujours à la même URL pour que l'icône écran d'accueil reste compatible.
 
 ## Mise à jour PWA
 
-La PWA utilise `version.json`, un service worker `network-first` pour `index.html`, `skipWaiting()`, `clients.claim()` et un cache versionné `tripsafe-rdr-v16-0-0`.
+Version: v16.1.0.0. Le service worker utilise un cache versionné, `skipWaiting`, `clients.claim`, network-first pour `index.html`, et `version.json` pour détecter les mises à jour.
 
-Si l’icône écran d’accueil reste bloquée sur une ancienne version, ouvrir l’app puis utiliser le bouton de mise à jour / déblocage du cache.
+## Données
 
-## Confidentialité
+Les données utilisateur restent dans le navigateur du téléphone via stockage local. Aucun serveur applicatif n'est requis.
 
-Pas de compte, pas de serveur applicatif, pas de synchronisation. Les sessions et historiques restent dans le stockage local du navigateur de l’utilisateur.
+
+## v16.1
+
+Navigation de lecture améliorée dans Neuro, textes d’introduction raccourcis, repères de retour et package PWA versionné.
