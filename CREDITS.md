@@ -1,5 +1,5 @@
-# Crédits
+# Credits
 
-TripSafe RdR est un prototype pédagogique de réduction des risques. Les contenus doivent rester prudents, non incitatifs et vérifiés avant diffusion large.
+TripSafe RdR est un outil pédagogique de biologie et de réduction des risques. Il ne constitue pas une incitation à consommer.
 
-Sources de fond utilisées dans le projet : Société Psychédélique Française, TripSit, RollSafe, DanceSafe, Alcool Info Service, Sécurité Routière, littérature scientifique citée dans les briefs internes.
+Sources principales intégrées au fil des versions : Manuel de réduction des risques de la Société Psychédélique Française, TripSit/SPF pour les interactions, sources RdR publiques citées dans les échanges de conception.

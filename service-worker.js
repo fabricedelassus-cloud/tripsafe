@@ -1,6 +1,6 @@
-const APP_VERSION = 'v15.1.0';
+const APP_VERSION = 'v15.2.0';
 const CACHE_PREFIX = 'tripsafe-rdr-';
-const CACHE_NAME = 'tripsafe-rdr-v15-1-0';
+const CACHE_NAME = 'tripsafe-rdr-v15-2-0';
 const CORE_ASSETS = ['./', './index.html', './manifest.webmanifest', './icon.svg', './version.json', './icons/icon-192.png', './icons/icon-512.png'];
 
 self.addEventListener('install', event => {
@@ -10,9 +10,11 @@ self.addEventListener('install', event => {
 
 self.addEventListener('activate', event => {
   event.waitUntil(
-    caches.keys().then(keys => Promise.all(
-      keys.filter(key => key.startsWith(CACHE_PREFIX) && key !== CACHE_NAME).map(key => caches.delete(key))
-    )).then(() => self.clients.claim())
+    caches.keys()
+      .then(keys => Promise.all(keys
+        .filter(key => key.startsWith(CACHE_PREFIX) && key !== CACHE_NAME)
+        .map(key => caches.delete(key))))
+      .then(() => self.clients.claim())
   );
 });
 
@@ -23,20 +25,25 @@ self.addEventListener('message', event => {
   }
 });
 
+async function networkFirstNavigate(req) {
+  try {
+    const res = await fetch(req, { cache: 'no-store' });
+    const cache = await caches.open(CACHE_NAME);
+    await cache.put('./index.html', res.clone());
+    return res;
+  } catch (err) {
+    return (await caches.match('./index.html')) || (await caches.match('./')) || Response.error();
+  }
+}
+
 self.addEventListener('fetch', event => {
   const req = event.request;
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
   if (url.origin !== location.origin) return;
 
-  if (req.mode === 'navigate' || url.pathname.endsWith('/index.html')) {
-    event.respondWith(
-      fetch(req, { cache: 'no-store' }).then(res => {
-        const copy = res.clone();
-        caches.open(CACHE_NAME).then(cache => cache.put('./index.html', copy)).catch(() => undefined);
-        return res;
-      }).catch(() => caches.match('./index.html').then(cached => cached || caches.match('./')))
-    );
+  if (req.mode === 'navigate' || url.pathname.endsWith('/index.html') || url.pathname.endsWith('/')) {
+    event.respondWith(networkFirstNavigate(req));
     return;
   }
 

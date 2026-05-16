@@ -4,10 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#090d1a">
-  <meta name="description" content="TripSafe — Comprendre la biologie de 6 substances, suivre les prises déclarées, les mélanges, les interactions et la récupération. Données locales uniquement.">
+  <meta name="description" content="TripSafe v15.2 — Comprendre la biologie de 6 substances, suivre les prises déclarées, les mélanges, les interactions, la récupération et les mises à jour PWA. Données locales uniquement.">
+  <meta name="tripsafe-version" content="v15.2.0">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
-  <title>TripSafe — v15.1 Cockpit local de réduction des risques</title>
+  <title>TripSafe — v15.2 Cockpit local de réduction des risques</title>
   <style>:root {
   --bg: #090d1a;
   --bg2: #0f172a;
@@ -1119,7 +1120,7 @@ body.doc-compact .segmented { padding-top: 6px; }
 }
 
 
-/* ===== v15.1 companion mode visibility ===== */
+/* ===== v15.2 companion mode visibility ===== */
 .companion-entry-card {
   margin: 12px 0 16px;
   display: flex;
@@ -1145,6 +1146,50 @@ body.doc-compact .segmented { padding-top: 6px; }
 .companion-page-actions { display: grid; gap: 8px; margin-top: 12px; }
 .companion-page-actions .call-grid { margin: 0; }
 
+
+
+/* ===== v15.2 corrections ===== */
+.pwa-update-banner strong { color: var(--info); }
+.pwa-version-pill { display:inline-flex; align-items:center; min-height:26px; padding:3px 8px; border-radius:999px; border:1px solid var(--line); color:var(--muted); font-size:10px; font-weight:900; }
+.learning-path-card { border:1px solid rgba(99,102,241,.30); background:linear-gradient(135deg, rgba(99,102,241,.10), rgba(8,145,178,.06)), var(--surface); border-radius:22px; padding:14px; margin:10px 0 16px; }
+.learning-path-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:10px; }
+.learning-path-grid button { min-height:48px; border:1px solid var(--line); border-radius:16px; background:var(--surface-2); color:var(--text); font-weight:900; font-size:12px; padding:8px; text-align:left; }
+.why-now-card { border:1px solid rgba(16,185,129,.30); background:rgba(16,185,129,.08); border-radius:16px; padding:10px 12px; margin:10px 0; }
+.why-now-card b { display:block; font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); margin-bottom:4px; }
+.why-now-card p { margin:0; color:var(--text); font-size:13px; line-height:1.5; }
+.context-glossary-note { border:1px dashed rgba(99,102,241,.45); background:rgba(99,102,241,.08); border-radius:14px; padding:9px 10px; font-size:12px; color:var(--muted); line-height:1.45; }
+.history-insights-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:10px; }
+.history-insight { border:1px solid var(--line); border-radius:16px; padding:10px; background:var(--surface-2); }
+.history-insight b { display:block; font-size:18px; font-family:var(--mono); }
+.history-insight small { display:block; color:var(--muted); font-size:11px; font-weight:900; }
+.recovery-checkin { margin-top:10px; border-top:1px solid var(--line); padding-top:10px; }
+.checkin-row { display:flex; gap:6px; flex-wrap:wrap; margin-top:8px; }
+.checkin-row button { min-height:34px; border-radius:999px; border:1px solid var(--line); background:var(--surface-2); color:var(--text); padding:0 10px; font-size:12px; font-weight:900; }
+.next60-list { display:grid; gap:7px; margin-top:8px; }
+.next60-item { border:1px solid var(--line); border-radius:14px; padding:8px 10px; background:var(--surface-2); font-size:12px; line-height:1.45; }
+.next60-item.warn { border-color:rgba(245,158,11,.35); background:rgba(245,158,11,.10); }
+.next60-item.danger, .next60-item.critical { border-color:rgba(239,68,68,.40); background:rgba(239,68,68,.10); }
+.update-tools-card { border-color:rgba(99,102,241,.35); }
+.add-intake-sticky { position:sticky; top:64px; z-index:18; box-shadow:var(--shadow); }
+.screen { scroll-padding-bottom: 150px; }
+.app-shell { padding-bottom: calc(130px + env(safe-area-inset-bottom)); }
+@media (max-width:390px){ .learning-path-grid,.history-insights-grid { grid-template-columns:1fr; } .pwa-update-banner { top:48px; } }
+
+.prep-card { border-color: rgba(16,185,129,.30); background: linear-gradient(135deg, rgba(16,185,129,.10), rgba(99,102,241,.06)), var(--surface); }
+.prep-list { display:grid; gap:8px; margin-top:10px; }
+.prep-list div { border:1px solid var(--line); border-radius:14px; padding:9px 10px; background:var(--surface-2); font-size:12px; color:var(--text); }
+.history-mini-chart { display:grid; gap:8px; margin-top:10px; }
+.mini-bar-row { display:grid; grid-template-columns:74px 1fr 28px; gap:8px; align-items:center; font-size:12px; }
+.mini-bar-track { height:9px; border-radius:999px; background:var(--surface-2); overflow:hidden; border:1px solid var(--line); }
+.mini-bar-fill { display:block; height:100%; border-radius:inherit; background:linear-gradient(90deg,var(--info),var(--classic)); min-width:2px; }
+.reminder-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+.reminder-row button { min-height:36px; border-radius:999px; border:1px solid var(--line); background:var(--surface-2); color:var(--text); padding:0 12px; font-weight:900; font-size:12px; }
+.export-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
+
+
+/* ===== v15.2 GitHub repair visible card ===== */
+.pwa-repair-card { border-color: rgba(99,102,241,.32); }
+.pwa-version-pill { display:inline-flex; min-height:26px; align-items:center; border-radius:999px; padding:4px 8px; border:1px solid var(--line); background:var(--surface-2); font:900 11px var(--mono); color:var(--muted); }
 </style>
 </head>
 <body>
@@ -1162,7 +1207,8 @@ body.doc-compact .segmented { padding-top: 6px; }
     expert: 'rdr_mode_expert',
     lang: 'rdr_lang',
     readModules: 'rdr_read_modules',
-    contentVersion: 'rdr_content_version'
+    contentVersion: 'rdr_content_version',
+    recoveryCheckins: 'rdr_recovery_checkins'
   };
 
   const storage = {
@@ -1173,8 +1219,10 @@ body.doc-compact .segmented { padding-top: 6px; }
     setJSON(key, value) { try { localStorage.setItem(key, JSON.stringify(value)); return true; } catch { return false; } }
   };
 
-  const DISCLAIMER_VERSION = 'v15.1';
-  const CONTENT_VERSION = 'v15.1';
+  const DISCLAIMER_VERSION = 'v15.2';
+  const CONTENT_VERSION = 'v15.2';
+  const APP_VERSION = 'v15.2.0';
+  const APP_CACHE_KEY = 'tripsafe-rdr-v15-2-0';
 
   const i18n = {
     "fr": {
@@ -1847,7 +1895,13 @@ body.doc-compact .segmented { padding-top: 6px; }
     companionChecklist1: 'Consciente et respiration normale ?',
     companionChecklist2: 'Trop chaud / douleur thoracique / confusion sévère ?',
     companionChecklist3: 'Substances, heure et quantité approximative notées ?',
-    companionChecklist4: 'Lieu calme, frais, personne sobre présente ?'
+    companionChecklist4: 'Lieu calme, frais, personne sobre présente ?',
+    sessionStatsTitle: 'Statistiques de suivi',
+    sessionStatsBody: 'Résumé local des prises, mélanges actifs, incertitude et alcool cumulé. Cela aide à savoir quoi surveiller, sans prouver qu’une situation est sûre.',
+    intakeCountLabel: 'prises',
+    mixCountLabel: 'mélanges actifs',
+    activeWindowLabel: 'fenêtres actives',
+    alcoholCumLabel: 'verres standard'
   });
   Object.assign(i18n.en, {
     v15UpdateAvailable: 'New version available — update',
@@ -1905,7 +1959,103 @@ body.doc-compact .segmented { padding-top: 6px; }
     companionChecklist1: 'Conscious and breathing normally?',
     companionChecklist2: 'Too hot / chest pain / severe confusion?',
     companionChecklist3: 'Substances, time and approximate quantity noted?',
-    companionChecklist4: 'Calm, cool place, sober person present?'
+    companionChecklist4: 'Calm, cool place, sober person present?',
+    sessionStatsTitle: 'Tracking statistics',
+    sessionStatsBody: 'Local summary of intakes, active mixes, uncertainty and cumulative alcohol. It helps decide what to monitor, never proves safety.',
+    intakeCountLabel: 'intakes',
+    mixCountLabel: 'active mixes',
+    activeWindowLabel: 'active windows',
+    alcoholCumLabel: 'standard drinks'
+  });
+
+  // ===== v15.2 i18n additions =====
+  Object.assign(i18n.fr, {
+    appVersionLabel: 'Version',
+    remoteVersionLabel: 'Version distante',
+    v15UpdateAvailable: 'Nouvelle version disponible — mettre à jour',
+    v15UpdateBody: 'Si l’icône écran d’accueil reste bloquée sur une ancienne version, utilise “Mettre à jour” puis “Débloquer le cache”.',
+    v15UpdateNow: 'Mettre à jour',
+    v15ResetCache: 'Débloquer le cache',
+    pwaTechnicalUpdate: 'Correctif GitHub Pages : index en network-first, cache versionné, suppression des anciens caches, bouton de réparation.',
+    learningPathTitle: 'Parcours d’apprentissage',
+    learningPathBody: 'Revenir entre les sessions sert à comprendre les mécanismes, pas à préparer une prise. Choisis un parcours court et avance module par module avec prudence.',
+    pathMixes: 'Parcours mélanges actifs',
+    pathRecovery: 'Parcours récupération',
+    pathCompanion: 'Parcours accompagnant',
+    whyNowTitle: 'Pourquoi ça compte maintenant',
+    whyNowGeneric: 'Ce mécanisme sert à traduire une sensation en décision prudente : ralentir, éviter les mélanges, surveiller le corps, demander de l’aide si un signal rouge apparaît.',
+    contextualGlossaryTitle: 'Glossaire contextuel',
+    contextualGlossaryBody: 'Les termes bleus sont tapables. En session active, retiens surtout le lien mécanisme → signal corporel → action prudente.',
+    historyInsightsTitle: 'Lecture de l’historique',
+    history30: '30 jours',
+    history90: '90 jours',
+    historyMixes: 'sessions avec mélange',
+    historyAvgGap: 'intervalle moyen',
+    recoveryCheckinsTitle: 'Check-in récupération',
+    checkinJ1: 'J+1',
+    checkinJ3: 'J+3',
+    checkinJ7: 'J+7',
+    checkinPrompt: 'Note courte : sommeil, humeur, anxiété, envie de reprendre, douleurs ou question à partager.',
+    checkinSaved: 'Check-in enregistré localement.',
+    noCheckins: 'Aucun check-in enregistré pour cette session.',
+    next60ItemTimeline: 'Sur les 60 prochaines minutes, les phases peuvent changer : utilise l’horloge du téléphone comme estimation, pas comme certitude.',
+    next60ItemMix: 'Si un mélange est actif, le risque principal peut venir de l’interaction plutôt que de la dose isolée.',
+    next60ItemUncertainty: 'Si la dose est visuelle ou non analysée, l’incertitude reste une information de sécurité à part entière.',
+    focusInputsVerified: 'Champs de saisie stabilisés : les valeurs critiques gardent un id et évitent les rendus inutiles pendant la frappe.',
+    hardRefreshHelp: 'Si le raccourci écran d’accueil reste ancien : ouvrir l’app, utiliser Débloquer le cache, puis relancer depuis l’icône.',
+    companionModeTitle: 'J’aide quelqu’un',
+    companionModeBody: 'Priorité : conscience, respiration, chaleur, douleur thoracique, substances/heure, endroit calme. En doute : 112.',
+    noDriving: 'Ne pas conduire. Une estimation locale ne peut jamais autoriser la conduite.',
+    updateCheckNow: 'Vérifier la version',
+    pwaHardResetExplain: 'Réparation du cache PWA : les caches TripSafe sont vidés puis la version réseau est rechargée. Prudence.',
+    pwaUpdateDetected: 'Nouvelle version détectée.',
+    updateAlreadyLatest: 'La version locale est à jour.',
+    updateRemoteUnknown: 'Vérification distante impossible pour l’instant.',
+    sessionStatsTitle: 'Statistiques de suivi', sessionStatsBody: 'Résumé local des prises, mélanges actifs, incertitude et alcool cumulé. Cela aide à savoir quoi surveiller, sans prouver qu’une situation est sûre.', intakeCountLabel: 'prises', mixCountLabel: 'mélanges actifs', activeWindowLabel: 'fenêtres actives', alcoholCumLabel: 'verres standard'
+  });
+  Object.assign(i18n.en, {
+    appVersionLabel: 'Version',
+    remoteVersionLabel: 'Remote version',
+    v15UpdateAvailable: 'New version available — update',
+    v15UpdateBody: 'If the home-screen icon stays stuck on an old version, use “Update” then “Unblock cache”.',
+    v15UpdateNow: 'Update',
+    v15ResetCache: 'Unblock cache',
+    pwaTechnicalUpdate: 'GitHub Pages fix: network-first index, versioned cache, old-cache deletion, repair button.',
+    learningPathTitle: 'Learning paths',
+    learningPathBody: 'Coming back between sessions is for understanding mechanisms, not preparing use. Pick a short path and move module by module with caution.',
+    pathMixes: 'Active mixes path',
+    pathRecovery: 'Recovery path',
+    pathCompanion: 'Companion path',
+    whyNowTitle: 'Why this matters now',
+    whyNowGeneric: 'This mechanism helps translate a feeling into a cautious decision: slow down, avoid mixes, monitor the body, ask for help if a red flag appears.',
+    contextualGlossaryTitle: 'Contextual glossary',
+    contextualGlossaryBody: 'Blue terms are tappable. During active tracking, focus on mechanism → body signal → cautious action.',
+    historyInsightsTitle: 'History reading',
+    history30: '30 days',
+    history90: '90 days',
+    historyMixes: 'mixed sessions',
+    historyAvgGap: 'average interval',
+    recoveryCheckinsTitle: 'Recovery check-in',
+    checkinJ1: 'D+1',
+    checkinJ3: 'D+3',
+    checkinJ7: 'D+7',
+    checkinPrompt: 'Short note: sleep, mood, anxiety, urge to reuse, pain or question to share.',
+    checkinSaved: 'Check-in saved locally.',
+    noCheckins: 'No check-in saved for this session.',
+    next60ItemTimeline: 'Over the next 60 minutes, phases may shift: use the phone clock as an estimate, not certainty.',
+    next60ItemMix: 'If a mix is active, the main risk may come from the interaction rather than the isolated dose.',
+    next60ItemUncertainty: 'If the dose is visual or untested, uncertainty is safety information in itself.',
+    focusInputsVerified: 'Input fields stabilized: critical values keep an id and avoid unnecessary renders while typing.',
+    hardRefreshHelp: 'If the home-screen shortcut stays old: open the app, use Unblock cache, then relaunch from the icon.',
+    companionModeTitle: 'I am helping someone',
+    companionModeBody: 'Priority: consciousness, breathing, heat, chest pain, substances/time, calm place. If unsure: 112.',
+    noDriving: 'Do not drive. A local estimate can never authorize driving.',
+    updateCheckNow: 'Check version',
+    pwaHardResetExplain: 'PWA cache repair: TripSafe caches are cleared, then the network version reloads. Stay cautious.',
+    pwaUpdateDetected: 'New version detected.',
+    updateAlreadyLatest: 'Local version is up to date.',
+    updateRemoteUnknown: 'Remote version check unavailable for now.',
+    sessionStatsTitle: 'Tracking statistics', sessionStatsBody: 'Local summary of intakes, active mixes, uncertainty and cumulative alcohol. It helps decide what to monitor, never proves safety.', intakeCountLabel: 'intakes', mixCountLabel: 'active mixes', activeWindowLabel: 'active windows', alcoholCumLabel: 'standard drinks'
   });
 
   function tr(key) { return t(key); }
@@ -3980,6 +4130,24 @@ body.doc-compact .segmented { padding-top: 6px; }
     storage.set(STORAGE.contentVersion, CONTENT_VERSION);
   }
 
+  async function checkRemoteVersion(manual = false) {
+    if (location.protocol === 'file:') { if (manual && typeof RDR !== 'undefined') RDR.toast(t('updateFailed')); return false; }
+    try {
+      const res = await fetch('./version.json?ts=' + Date.now(), { cache: 'no-store' });
+      if (!res.ok) throw new Error('version fetch failed');
+      const data = await res.json();
+      state.remoteVersion = data.version || null;
+      const hasUpdate = !!data.version && data.version !== APP_VERSION;
+      state.pwaUpdateAvailable = hasUpdate;
+      if (manual && typeof RDR !== 'undefined') RDR.toast(hasUpdate ? t('pwaUpdateDetected') : t('updateAlreadyLatest'));
+      render();
+      return hasUpdate;
+    } catch {
+      if (manual && typeof RDR !== 'undefined') RDR.toast(t('updateRemoteUnknown'));
+      return false;
+    }
+  }
+
   const state = {
     view: 'home',
     selected: 'mdma',
@@ -4009,6 +4177,8 @@ body.doc-compact .segmented { padding-top: 6px; }
     readModules: storage.getJSON(STORAGE.readModules, {}),
     contentUpdateAvailable: false,
     pwaUpdateAvailable: false,
+    remoteVersion: null,
+    recoveryCheckins: storage.getJSON(STORAGE.recoveryCheckins, {}),
     theme: storage.get(STORAGE.theme) || 'dark',
     expert: storage.get(STORAGE.expert) === 'yes',
     now: Date.now(),
@@ -4485,7 +4655,8 @@ body.doc-compact .segmented { padding-top: 6px; }
       <div class="alert ${risk.type}"><b>${escapeHTML(risk.title)}</b><p>${wrapGlossaire(risk.body)}</p><p class="compact-note">${escapeHTML(risk.action || t('mixAlertAction'))}</p></div>
       <div class="alert ${um.cls}"><b>${t('uncertaintyTitle')} — ${escapeHTML(um.title)}</b><p>${escapeHTML(um.body)}</p>${u.reasons.length ? `<p class="compact-note">${escapeHTML(u.reasons.join(' · '))}</p>` : ''}</div>
       ${alc.entries ? `<div class="alert info"><b>${t('alcoholCumulativeTitle')}</b><p>${t('alcoholTotalStd')} : ${alc.stdTotal.toFixed(1)} · ${t('alcoholCurrentBac')} ≈ ${alc.bacCurrent.toFixed(2)} g/L</p><p class="compact-note">${t('alcoholMultiEntry')} ${t('bacLimitFranceShort')} ${t('alcoholNoDriveStrong')}</p></div>` : ''}
-      <article class="action-strip"><b>${t('next60Title')}</b><span>${t('next60Body')}</span></article>
+      ${renderSessionStats(session)}
+      ${renderNext60(session)}
     </article>`;
   }
   function renderSessionInteractionCards(session) {
@@ -4584,6 +4755,80 @@ body.doc-compact .segmented { padding-top: 6px; }
     return lines;
   }
 
+
+  function renderLearningPathCard() {
+    return `<article class="learning-path-card"><h2>${t('learningPathTitle')}</h2><p class="muted">${t('learningPathBody')}</p><div class="learning-path-grid"><button onclick="RDR.go('interactions')">⚡ ${t('pathMixes')}</button><button onclick="RDR.selectSubstance('mdma','recovery')">↻ ${t('pathRecovery')}</button><button onclick="RDR.openCompanion()">🆘 ${t('pathCompanion')}</button></div><p class="context-glossary-note" style="margin-top:10px;"><b>${t('contextualGlossaryTitle')}</b><br>${t('contextualGlossaryBody')}</p></article>`;
+  }
+
+  function renderWhyNowCard(sub, module, idx) {
+    let body = t('whyNowGeneric');
+    if (sub.id === 'alcool') body = isEn() ? 'Alcohol changes memory, breathing, liver load and judgement at the same time. The useful decision is to slow the context down, avoid sedative mixes and never use BAC estimates to justify driving.' : 'L’alcool modifie mémoire, respiration, foie et jugement en même temps. La décision utile est de ralentir le contexte, éviter les mélanges sédatifs et ne jamais utiliser l’alcoolémie estimée pour justifier la conduite.';
+    if (sub.id === 'cocaine') body = isEn() ? 'Cocaine risk often becomes visible through the heart, anxiety, redosing and alcohol combinations. The useful decision is to treat chest pain, palpitations or confusion as red flags.' : 'Le risque cocaïne devient souvent visible par le cœur, l’anxiété, les reprises et l’association avec alcool. La décision utile est de traiter douleur thoracique, palpitations ou confusion comme des signaux rouges.';
+    if (sub.id === 'mdma') body = isEn() ? 'For MDMA, the mechanism matters because redosing, heat and water balance can change risk faster than the felt plateau suggests. Monitor heart, temperature and recovery with caution.' : 'Pour la MDMA, le mécanisme compte parce que reprise, chaleur et équilibre hydrique peuvent changer le risque plus vite que le plateau ressenti. Surveille cœur, température et récupération avec prudence.';
+    if (sub.id === 'ketamine') body = isEn() ? 'For ketamine, dissociation can hide body signals. The useful decision is to reduce movement, avoid depressant mixes, and protect physical safety before interpreting the experience.' : 'Pour la kétamine, la dissociation peut masquer les signaux corporels. La décision utile est de réduire les déplacements, éviter les dépresseurs et protéger la sécurité physique avant d’interpréter l’expérience.';
+    return `<div class="why-now-card"><b>${t('whyNowTitle')}</b><p>${wrapGlossaire(body)}</p></div>`;
+  }
+
+  function next60Items(session) {
+    const pairs = sessionInteractionPairs(session);
+    const u = sessionUncertainty(session);
+    const items = [{ cls: 'info', text: t('next60ItemTimeline') }];
+    if (pairs[0]) items.push({ cls: pairs[0].rank >= 5 ? 'danger' : pairs[0].rank >= 4 ? 'warn' : 'info', text: `${t('next60ItemMix')} ${labelOf(pairs[0].a)} + ${labelOf(pairs[0].b)} : ${pairs[0].inter.action || t('mixAlertAction')}` });
+    if (u.level !== 'low') items.push({ cls: uncertaintyMeta(u.level).cls, text: `${t('next60ItemUncertainty')} ${uncertaintyMeta(u.level).body}` });
+    return items;
+  }
+
+  function renderNext60(session) {
+    const items = next60Items(session);
+    return `<article class="action-strip"><b>${t('next60Title')}</b><div class="next60-list">${items.map(x => `<div class="next60-item ${x.cls}">${escapeHTML(x.text)}</div>`).join('')}</div></article>`;
+  }
+
+
+  function renderSessionStats(session) {
+    const entries = entryList(session);
+    const pairs = sessionInteractionPairs(session);
+    const active = activeEntries(session).length;
+    const alc = aggregateAlcohol(session);
+    return `<div class="session-stats-card"><b>${t('sessionStatsTitle')}</b><p>${t('sessionStatsBody')}</p><div class="stats-grid"><span><b>${entries.length}</b><small>${t('intakeCountLabel')}</small></span><span><b>${pairs.length}</b><small>${t('mixCountLabel')}</small></span><span><b>${active}</b><small>${t('activeWindowLabel')}</small></span><span><b>${alc.entries ? alc.stdTotal.toFixed(1) : '0'}</b><small>${t('alcoholCumLabel')}</small></span></div></div>`;
+  }
+
+  function renderHistoryInsights(sessions) {
+    const now = Date.now();
+    const last30 = sessions.filter(s => (now - new Date(s.startedAt).getTime()) / 864e5 < 30).length;
+    const last90 = sessions.filter(s => (now - new Date(s.startedAt).getTime()) / 864e5 < 90).length;
+    const mixes = sessions.filter(s => (s.entries || []).some(e => e.substance && e.substance !== s.substance) || (s.coUse || []).length).length;
+    const sorted = [...sessions].sort((a,b)=>new Date(a.startedAt)-new Date(b.startedAt));
+    let avgGap = '—';
+    if (sorted.length > 1) {
+      const gaps = sorted.slice(1).map((s,i)=>(new Date(s.startedAt)-new Date(sorted[i].startedAt))/864e5).filter(x=>Number.isFinite(x) && x>=0);
+      if (gaps.length) avgGap = (gaps.reduce((a,b)=>a+b,0)/gaps.length).toFixed(1) + ' j';
+    }
+    return `<article class="card-xl"><h2>${t('historyInsightsTitle')}</h2><div class="history-insights-grid"><div class="history-insight"><b>${last30}</b><small>${t('history30')}</small></div><div class="history-insight"><b>${last90}</b><small>${t('history90')}</small></div><div class="history-insight"><b>${mixes}</b><small>${t('historyMixes')}</small></div><div class="history-insight"><b>${avgGap}</b><small>${t('historyAvgGap')}</small></div></div></article>`;
+  }
+
+  function renderRecoveryCheckinBlock(session) {
+    const notes = state.recoveryCheckins[session.id] || {};
+    const saved = Object.entries(notes).map(([day, note]) => `<p class="compact-note"><b>${escapeHTML(day)}</b> — ${escapeHTML(note)}</p>`).join('') || `<p class="compact-note">${t('noCheckins')}</p>`;
+    return `<div class="recovery-checkin"><b>${t('recoveryCheckinsTitle')}</b>${saved}<div class="checkin-row"><button onclick="RDR.recoveryCheckin('${session.id}','${t('checkinJ1')}')">${t('checkinJ1')}</button><button onclick="RDR.recoveryCheckin('${session.id}','${t('checkinJ3')}')">${t('checkinJ3')}</button><button onclick="RDR.recoveryCheckin('${session.id}','${t('checkinJ7')}')">${t('checkinJ7')}</button></div></div>`;
+  }
+
+
+  function renderPreparationCard() {
+    return `<article class="card-xl prep-card"><h2>${t('prepTitle')}</h2><p class="muted">${t('prepBody')}</p><div class="prep-list"><div>✓ ${t('prep1')}</div><div>✓ ${t('prep2')}</div><div>✓ ${t('prep3')}</div><div>✓ ${t('prep4')}</div></div></article>`;
+  }
+
+  function renderHistoryMiniTrends(sessions) {
+    if (!sessions.length) return '';
+    const counts = sessions.reduce((acc, s) => { const k = labelOf(s.substance); acc[k] = (acc[k] || 0) + 1; return acc; }, {});
+    const max = Math.max(...Object.values(counts), 1);
+    const rows = Object.entries(counts).sort((a,b)=>b[1]-a[1]).map(([name, count]) => `<div class="mini-bar-row"><span>${escapeHTML(name)}</span><div class="mini-bar-track"><span class="mini-bar-fill" style="width:${Math.max(4, Math.round(count / max * 100))}%"></span></div><b>${count}</b></div>`).join('');
+    return `<article class="card-xl"><h2>${t('personalTrendsTitle')}</h2><div class="history-mini-chart">${rows}</div><p class="compact-note">${t('sleepMoodRecovery')} · ${t('recoveryCheckinsTitle')}</p></article>`;
+  }
+
+  function renderReminderControls() {
+    return `<article class="card-xl"><h2>${t('reminderTitle')}</h2><p class="muted">${t('reminderBody')}</p><div class="reminder-row"><button onclick="RDR.setLocalReminder(30)">${t('reminder30')}</button><button onclick="RDR.setLocalReminder(60)">${t('reminder60')}</button></div></article>`;
+  }
+
   function renderToast() {
     return `<div class="toast-box">${escapeHTML(state.toast)}</div>`;
   }
@@ -4610,7 +4855,10 @@ body.doc-compact .segmented { padding-top: 6px; }
     </header>${state.pwaUpdateAvailable ? renderPWAUpdateBanner() : ''}`;
   }
   function renderPWAUpdateBanner() {
-    return `<div class="pwa-update-banner"><div><b>${t('v15UpdateAvailable')}</b><p>${t('v15UpdateBody')}</p></div><button class="small-btn" onclick="RDR.updateNow()">${t('v15UpdateNow')}</button><button class="small-btn ghost" onclick="RDR.forceResetCache()">${t('v15ResetCache')}</button></div>`;
+    return `<div class="pwa-update-banner"><div><b>${t('v15UpdateAvailable')}</b><p>${t('v15UpdateBody')} <span class="pwa-version-pill">${t('appVersionLabel')} ${APP_VERSION}${state.remoteVersion ? ' · ' + t('remoteVersionLabel') + ' ' + escapeHTML(state.remoteVersion) : ''}</span></p><p>${t('pwaTechnicalUpdate')}</p></div><button class="small-btn" onclick="RDR.updateNow()">${t('v15UpdateNow')}</button><button class="small-btn ghost" onclick="RDR.checkRemoteVersion(true)">${t('updateCheckNow')}</button><button class="small-btn ghost" onclick="RDR.forceResetCache()">${t('v15ResetCache')}</button></div>`;
+  }
+  function renderPWARepairCard() {
+    return `<article class="card-xl pwa-repair-card"><div class="card-head"><div><h2>${t('v15UpdateAvailable')}</h2><p class="subtitle">${t('forceUpdateHelp')}</p></div><span class="pwa-version-pill">${t('appVersionLabel')} ${APP_VERSION}</span></div><p class="compact-note">${t('remoteVersionLabel')} : ${escapeHTML(state.remoteVersion || '—')}</p><div class="hero-actions"><button class="small-btn" onclick="RDR.checkRemoteVersion(true)">${t('updateCheckNow')}</button><button class="small-btn ghost" onclick="RDR.forceResetCache()">${t('v15ResetCache')}</button></div><p class="compact-note">${t('pwaTechnicalUpdate')}</p></article>`;
   }
 
 
@@ -4682,6 +4930,8 @@ body.doc-compact .segmented { padding-top: 6px; }
       <div class="learn-shortcuts">
         ${learnCards.map(c => `<button class="learn-card" onclick="RDR.selectSubstance('${c.sub}','${c.tab}')"><span>${c.icon}</span><b>${t(c.key)}</b><small>${t(c.preview)}</small></button>`).join('')}
       </div>
+      ${renderLearningPathCard()}
+      ${renderPWARepairCard()}
       ${state.contentUpdateAvailable ? `<div class="alert info" style="margin-bottom:10px;">${t('newContentAvailable')}</div>` : ''}
       ${state.expert ? `<p class="compact-note" style="text-align:center;color:var(--info);">${t('expertActiveNote')}</p>` : ''}
       <div class="section-title"><h2>${t('sectionPsy')}</h2><p>${t('substanceSubtitle')}</p></div>
@@ -4966,6 +5216,7 @@ body.doc-compact .segmented { padding-top: 6px; }
           ${renderMechanismSvg(sub, m.visual || 'receptor', 0)}
           ${(sub.id === 'alcool' && /sevrage|Delirium/i.test(m.title || '')) ? '<a class="call-btn full" href="tel:15">🚨 ' + t('samuEmergency') + '</a>' : ''}
           <div class="plain-stack">${(m.plain || []).map((x, pi) => `<p class="plain-item ${pi === 0 ? 'plain-lead' : ''}">${wrapGlossaire(x)}</p>`).join('')}</div>
+          ${renderWhyNowCard(sub, m, idx)}
           <details ${state.expert ? 'open' : ''} ontoggle="if(this.open){RDR.markModuleRead('${sub.id}',${idx})}"><summary class="details-summary"><span class="badge info expert-pill">🔬 Expert</span> ${t('goFurther')}</summary><ul>${(m.expert || []).map(x => `<li>${wrapGlossaire(x)}</li>`).join('')}</ul></details>
           ${nextModule ? `<button class="ghost-btn full" style="margin-top:12px;" onclick="RDR.markModuleRead('${sub.id}',${idx}); (function(){ const el = document.getElementById('neuro-module-${sub.id}-${idx + 1}'); if(el){ const top = el.getBoundingClientRect().top + window.scrollY - 140; window.scrollTo({top, behavior:'smooth'}); }})()">${t('nextModule')} : ${escapeHTML(nextModule.title)} →</button>` : `<div class="alert safe" style="margin-top:12px;text-align:center;font-weight:900;">✓ ${t('allModulesRead').replace('{sub}', escapeHTML(sub.short))}</div><button class="ghost-btn full" onclick="RDR.setDocTab('recovery')">${t('ctaRecovery')}</button>`}
         </article>`;
@@ -4991,6 +5242,7 @@ body.doc-compact .segmented { padding-top: 6px; }
         </div>
         ${renderDoseHelp(sub)}
         <div class="result-card ${level.className}"><span>${t('doseLevel')}</span><b>${escapeHTML(doseLabel(level))}</b>${mgkg ? `<em>${mgkg} mg/kg</em>` : ''}</div>
+        <div class="alert ${known ? 'info' : 'critical'}"><b>${t('uncertaintyTitle')}</b><p>${known ? t('notSafeJustUnknown') : t('estimationJournalOnly')}</p></div>
         ${alerts.map(a => `<div class="alert ${a.type}">${escapeHTML(a.text)}</div>`).join('')}
       </article>
       <article class="card-xl"><h2>${t('timelineExplicit')}</h2>${renderTimeline(sub.id)}${renderTimelineDetails(sub.id)}</article>
@@ -5277,11 +5529,11 @@ body.doc-compact .segmented { padding-top: 6px; }
     }
     if (f.substance === 'cocaine' && f.inputMode === 'line') {
       const e = estimateLineMg(f.lineCm, f.lineSize || 'medium');
-      return { dose: e.mid, known: false, display: `≈ ${e.low}-${e.high} mg (${t('estimationOnly')})`, estimate: e };
+      return { dose: '', known: false, display: `≈ ${e.low}-${e.high} mg (${t('rangeOnlyNoMid')})`, estimate: e };
     }
     if (f.substance === 'mdma' && f.inputMode === 'finger') {
       const e = estimateFingerMg(f.fingerSize || 'small');
-      return { dose: e.mid, known: false, display: `≈ ${e.low}-${e.high} mg (${t('estimationOnly')})`, estimate: e };
+      return { dose: '', known: false, display: `≈ ${e.low}-${e.high} mg (${t('rangeOnlyNoMid')})`, estimate: e };
     }
     return { dose: f.dose || '', known: doseInputKnown(f), display: f.dose ? `${f.dose} ${getSubstance(f.substance).unit}` : t('unknownDose') };
   }
@@ -5346,6 +5598,7 @@ body.doc-compact .segmented { padding-top: 6px; }
     return `<section>
       <div class="section-title"><h1>${t('sessionTitle')}</h1><p>${t('sessionSubtitle')}</p></div>
       ${renderCompanionEntryCard()}
+      ${renderPreparationCard()}
       <article class="card-xl quick-start-card">
         <h2>${t('quickStart')}</h2>
         <p class="muted">${t('selectedSubstance')} <b>${escapeHTML(sub.name)}</b></p>
@@ -5409,7 +5662,7 @@ body.doc-compact .segmented { padding-top: 6px; }
 
   function renderSessionTabBody(session, sub) {
     const latest = [...(session.metrics || [])].pop() || {};
-    return `<div class="stack"><article class="card-xl metrics"><h2>${t('liveBody')}</h2><div class="metric-grid">${renderMetric(t('labelFC'), latest.hr ? `${latest.hr} bpm` : '—', t('threshFC'), metricState('hr', latest.hr))}${renderMetric(t('labelTemp'), latest.temp ? `${latest.temp} °C` : '—', t('threshTemp'), metricState('temp', latest.temp))}${renderMetric(t('labelWater'), latest.water ? `${latest.water} ml` : '—', t('threshWater'), 'info')}</div><div class="form-grid three-cols"><label>${t('bpm')}<input id="input-metric-hr" type="number" inputmode="numeric" min="20" max="250" step="1" value="${escapeHTML(state.metricDraft.hr)}" oninput="RDR.metricDraft('hr', this.value)"></label><label>°C<input id="input-metric-temp" type="number" inputmode="decimal" min="32" max="43" step="0.1" value="${escapeHTML(state.metricDraft.temp)}" oninput="RDR.metricDraft('temp', this.value)"></label><label>${t('waterMl')}<input id="input-metric-water" type="number" inputmode="numeric" min="0" max="5000" step="50" value="${escapeHTML(state.metricDraft.water)}" oninput="RDR.metricDraft('water', this.value)"></label></div><button class="ghost-btn full" onclick="RDR.recordMetric()">${t('saveMetrics')}</button></article>${renderCompanionMini()}</div>`;
+    return `<div class="stack"><article class="card-xl metrics"><h2>${t('liveBody')}</h2><div class="metric-grid">${renderMetric(t('labelFC'), latest.hr ? `${latest.hr} bpm` : '—', t('threshFC'), metricState('hr', latest.hr))}${renderMetric(t('labelTemp'), latest.temp ? `${latest.temp} °C` : '—', t('threshTemp'), metricState('temp', latest.temp))}${renderMetric(t('labelWater'), latest.water ? `${latest.water} ml` : '—', t('threshWater'), 'info')}</div><div class="form-grid three-cols"><label>${t('bpm')}<input id="input-metric-hr" type="number" inputmode="numeric" min="20" max="250" step="1" value="${escapeHTML(state.metricDraft.hr)}" oninput="RDR.metricDraft('hr', this.value)"></label><label>°C<input id="input-metric-temp" type="number" inputmode="decimal" min="32" max="43" step="0.1" value="${escapeHTML(state.metricDraft.temp)}" oninput="RDR.metricDraft('temp', this.value)"></label><label>${t('waterMl')}<input id="input-metric-water" type="number" inputmode="numeric" min="0" max="5000" step="50" value="${escapeHTML(state.metricDraft.water)}" oninput="RDR.metricDraft('water', this.value)"></label></div><button class="ghost-btn full" onclick="RDR.recordMetric()">${t('saveMetrics')}</button></article>${renderReminderControls()}${renderCompanionMini()}</div>`;
   }
 
 
@@ -5456,6 +5709,8 @@ body.doc-compact .segmented { padding-top: 6px; }
     const overall = buildOverallHistoryAI(sessions);
     return `<section>
       <div class="section-title"><h1>${t('historyTitle')}</h1><p>${t('historyOnPhone')}</p></div>
+      ${renderHistoryInsights(sessions)}
+      ${renderHistoryMiniTrends(sessions)}
       ${renderAICard(overall, t('compassTitle'))}
       <article class="card-xl"><div class="card-head"><h2>${t('archivedSessions')}</h2><button class="ghost-btn" onclick="RDR.clearHistory()">${t('clearHistory')}</button></div>${sessions.length ? sessions.map(renderHistoryItem).join('') : `<div class="why-read-card"><b>${t('whyHistoryTitle')}</b><p>${t('whyHistoryBody')}</p></div>`}</article>
       <article class="card-xl privacy"><h2>${t('privacyTitle')}</h2><p>${t('privacyText')}</p></article>
@@ -5467,7 +5722,7 @@ body.doc-compact .segmented { padding-top: 6px; }
     const doseInfo = totalKnownDose(s);
     const level = classifyDose(s.substance, doseInfo.total || s.dose, doseInfo.known);
     const alerts = scanHistoryForSession(s, state.sessions).slice(0, 2);
-    return `<div class="history-item"><div><b>${escapeHTML(sub.name)}</b><span>${new Date(s.startedAt).toLocaleString(localeDateCode(), {dateStyle:'medium', timeStyle:'short'})}</span></div><div><span class="badge ${level.className}">${doseInfo.known ? `${doseInfo.total || s.dose}${sub.unit}` : t('unknownDose')}</span></div>${alerts.map(a => `<p class="history-alert ${a.type}">${escapeHTML(a.text)}</p>`).join('')}<button class="small-btn" onclick="RDR.reuseSession('${s.id}')">${t('reuseSession')}</button><button class="small-btn ghost" onclick="RDR.deleteSession('${s.id}')">${t('deleteSession')}</button></div>`;
+    return `<div class="history-item"><div><b>${escapeHTML(sub.name)}</b><span>${new Date(s.startedAt).toLocaleString(localeDateCode(), {dateStyle:'medium', timeStyle:'short'})}</span></div><div><span class="badge ${level.className}">${doseInfo.known ? `${doseInfo.total || s.dose}${sub.unit}` : t('unknownDose')}</span></div>${alerts.map(a => `<p class="history-alert ${a.type}">${escapeHTML(a.text)}</p>`).join('')}${renderRecoveryCheckinBlock(s)}<div class="export-row"><button class="small-btn" onclick="RDR.reuseSession('${s.id}')">${t('reuseSession')}</button><button class="small-btn" onclick="RDR.exportSession('${s.id}')">${t('exportSession')}</button><button class="small-btn ghost" onclick="RDR.deleteSession('${s.id}')">${t('deleteSession')}</button></div></div>`;
   }
 
   function buildOverallHistoryAI(sessions) {
@@ -5695,9 +5950,9 @@ body.doc-compact .segmented { padding-top: 6px; }
         alcohol = estimateAlcohol({ ...d, weight: state.active.weight, sex: state.active.sex });
         amount = Number(alcohol.std.toFixed(2)); known = true; display = `${alcohol.std.toFixed(1)} ${t('standardUnits')} · ${Math.round(alcohol.grams)} g`;
       } else if (subKey === 'cocaine' && d.inputMode === 'line') {
-        estimate = estimateLineMg(d.lineCm, d.lineSize || 'medium'); amount = estimate.mid; known = false; display = `≈ ${estimate.low}-${estimate.high} mg (${t('estimationOnly')})`;
+        estimate = estimateLineMg(d.lineCm, d.lineSize || 'medium'); amount = ''; known = false; display = `≈ ${estimate.low}-${estimate.high} mg (${t('rangeOnlyNoMid')})`;
       } else if (subKey === 'mdma' && d.inputMode === 'finger') {
-        estimate = estimateFingerMg(d.fingerSize || 'small'); amount = estimate.mid; known = false; display = `≈ ${estimate.low}-${estimate.high} mg (${t('estimationOnly')})`;
+        estimate = estimateFingerMg(d.fingerSize || 'small'); amount = ''; known = false; display = `≈ ${estimate.low}-${estimate.high} mg (${t('rangeOnlyNoMid')})`;
       }
       state.active.entries = (state.active.entries || []).concat({ kind: 'intake', substance: subKey, at, amount, known, display, estimate, alcohol, mode: d.note || d.inputMode || t('redoseDuringSession') });
       state.intakeDraft = { substance: state.active.substance, inputMode: 'weighed', amount: '', minutesAgo: '0', known: 'yes', note: '', alcoholType: 'beer', drinkCount: '1', drinkVolCl: '25', drinkAbv: '5', lineCm: '', lineSize: 'medium', fingerSize: 'small' };
@@ -5732,12 +5987,56 @@ body.doc-compact .segmented { padding-top: 6px; }
 
   window.RDR = RDR;
 
+
+  function exportSessionSummaryText(s) {
+    const sub = getSubstance(s.substance);
+    const doseInfo = totalKnownDose(s);
+    const pairs = sessionInteractionPairs(s).map(p => `${labelOf(p.a)} + ${labelOf(p.b)}: ${riskLabel(p.meta)}`);
+    const alc = aggregateAlcohol(s);
+    const lines = [
+      'TripSafe RdR — local session summary',
+      `${sub.name} — ${new Date(s.startedAt).toLocaleString(localeDateCode(), { dateStyle:'medium', timeStyle:'short' })}`,
+      `Dose: ${doseInfo.known ? (doseInfo.total + sub.unit) : t('unknownDose')}`,
+      `Entries: ${entryList(s).length}`,
+      alc.entries ? `Alcohol: ${alc.stdTotal.toFixed(1)} standard drinks · current BAC estimate ≈ ${alc.bacCurrent.toFixed(2)} g/L` : '',
+      pairs.length ? `Active/declared mixes: ${pairs.join(' / ')}` : 'Active/declared mixes: none in the local record',
+      `Recovery check-ins: ${Object.keys(state.recoveryCheckins[s.id] || {}).length}`,
+      'This is a local harm-reduction note with uncertainty; it never proves safety.'
+    ];
+    return lines.filter(Boolean).join('\n');
+  }
+
   // ===== v15 method overrides =====
   Object.assign(RDR, {
-    updateNow() {
+    recoveryCheckin(sessionId, day) {
+      const note = prompt(t('checkinPrompt')) || '';
+      if (!note.trim()) return;
+      state.recoveryCheckins[sessionId] = state.recoveryCheckins[sessionId] || {};
+      state.recoveryCheckins[sessionId][day] = note.trim();
+      storage.setJSON(STORAGE.recoveryCheckins, state.recoveryCheckins);
+      RDR.toast(t('checkinSaved'));
+      render();
+    },
+    exportSession(id) {
+      const s = state.sessions.find(x => x.id === id);
+      if (!s) return;
+      const txt = exportSessionSummaryText(s);
+      if (navigator.clipboard?.writeText) navigator.clipboard.writeText(txt).then(() => RDR.toast(t('exportCopied'))).catch(() => RDR.toast(txt));
+      else RDR.toast(txt);
+    },
+    setLocalReminder(minutes) {
+      RDR.toast(t('reminderToast').replace('{n}', String(minutes)));
+    },
+    async checkRemoteVersion(manual=false) { await checkRemoteVersion(manual); },
+    async updateNow() {
       RDR.toast(t('updateInstalling'));
-      if (navigator.serviceWorker?.controller) navigator.serviceWorker.controller.postMessage({ type: 'SKIP_WAITING' });
-      setTimeout(() => location.reload(), 500);
+      try {
+        const reg = await navigator.serviceWorker?.getRegistration?.();
+        await reg?.update?.();
+        if (reg?.waiting) reg.waiting.postMessage({ type: 'SKIP_WAITING' });
+        if (navigator.serviceWorker?.controller) navigator.serviceWorker.controller.postMessage({ type: 'SKIP_WAITING' });
+      } catch {}
+      setTimeout(() => location.reload(), 700);
     },
     async forceResetCache() {
       try {
@@ -5747,7 +6046,8 @@ body.doc-compact .segmented { padding-top: 6px; }
         }
         const regs = await navigator.serviceWorker?.getRegistrations?.();
         if (regs) await Promise.all(regs.map(r => r.unregister()));
-        location.reload();
+        const base = location.href.split('#')[0].split('?')[0];
+        location.href = base + '?refresh=' + Date.now();
       } catch (e) { RDR.toast(t('updateFailed')); }
     },
     addIntake() {
@@ -5765,9 +6065,9 @@ body.doc-compact .segmented { padding-top: 6px; }
         alcohol = estimateAlcohol({ ...d, weight: state.active.weight, sex: state.active.sex });
         amount = Number(alcohol.std.toFixed(2)); known = true; display = `${alcohol.std.toFixed(1)} ${t('standardUnits')} · ${Math.round(alcohol.grams)} g`;
       } else if (subKey === 'cocaine' && d.inputMode === 'line') {
-        estimate = estimateLineMg(d.lineCm, d.lineSize || 'medium'); amount = estimate.mid; known = false; display = `≈ ${estimate.low}-${estimate.high} mg (${t('rangeOnlyNoMid')})`;
+        estimate = estimateLineMg(d.lineCm, d.lineSize || 'medium'); amount = ''; known = false; display = `≈ ${estimate.low}-${estimate.high} mg (${t('rangeOnlyNoMid')})`;
       } else if (subKey === 'mdma' && d.inputMode === 'finger') {
-        estimate = estimateFingerMg(d.fingerSize || 'small'); amount = estimate.mid; known = false; display = `≈ ${estimate.low}-${estimate.high} mg (${t('rangeOnlyNoMid')})`;
+        estimate = estimateFingerMg(d.fingerSize || 'small'); amount = ''; known = false; display = `≈ ${estimate.low}-${estimate.high} mg (${t('rangeOnlyNoMid')})`;
       } else if (d.inputMode === 'visual') {
         known = false; display = amount ? `${amount} ${sub.unit} (${t('nonWeighed')})` : t('unknownDose');
       }
@@ -5796,9 +6096,10 @@ body.doc-compact .segmented { padding-top: 6px; }
       location.reload();
     });
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('./service-worker.js').then(reg => {
+      navigator.serviceWorker.register('./service-worker.js?v=' + encodeURIComponent(APP_VERSION), { updateViaCache: 'none' }).then(reg => {
         window.tripSafeSWRegistration = reg;
         reg.update().catch(() => {});
+        checkRemoteVersion();
         if (reg.waiting) { state.pwaUpdateAvailable = true; render(); }
         reg.addEventListener('updatefound', () => {
           const worker = reg.installing;
@@ -5832,6 +6133,7 @@ body.doc-compact .segmented { padding-top: 6px; }
     }
   });
   render();
+  checkRemoteVersion();
   if (state.active) startTimerLoop();
 })();
 </script>

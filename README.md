@@ -1,13 +1,26 @@
-# TripSafe RdR v15.1
+# TripSafe RdR v15.2
 
-PWA standalone, offline, locale, sans compte ni serveur. Version v15.1 : cockpit de session, moteur multi-substances, alcool cumulatif, incertitude des estimations et mise à jour PWA robuste.
+PWA standalone, offline, locale, sans compte ni serveur.
 
-## GitHub Pages
+## Publication GitHub Pages
 
 1. Dépose tout le contenu de ce dossier à la racine du repo.
 2. Active GitHub Pages sur `main / root` ou via GitHub Actions.
-3. Garde toujours la même URL pour que l’icône écran d’accueil pointe vers la version mise à jour.
-4. Le service worker utilise un cache versionné `tripsafe-rdr-v15.1-0-0` et un chargement network-first pour `index.html`.
+3. Garde toujours la même URL, par exemple `https://<compte>.github.io/tripsafe-rdr/`.
+4. Ne crée pas un nouveau sous-dossier par version : l'icône écran d'accueil doit pointer vers la même URL.
+
+## Mise à jour PWA anti-version-collée
+
+v15.2 inclut :
+
+- `version.json` en no-store via fetch côté app ;
+- `service-worker.js` versionné `tripsafe-rdr-v15-2-0` ;
+- `skipWaiting()` + `clients.claim()` ;
+- suppression automatique des anciens caches `tripsafe-rdr-*` ;
+- stratégie network-first pour `index.html` ;
+- bouton de réparation cache dans l'app.
+
+Si l'icône écran d'accueil reste bloquée sur une ancienne version déjà installée avant v15.2, ouvrir l'app depuis le lien GitHub Pages, puis utiliser `Débloquer le cache`. Une réinstallation unique de l'icône peut être nécessaire pour les très anciennes installations ; après v15.2, le système d'update est prévu pour éviter ce blocage.
 
 ## Confidentialité
 
