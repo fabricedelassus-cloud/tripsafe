@@ -7,7 +7,7 @@
   <meta name="description" content="TripSafe — Comprendre la biologie de 6 substances, suivre les prises déclarées, les mélanges, les interactions et la récupération. Données locales uniquement.">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
-  <title>TripSafe — v15 Cockpit local de réduction des risques</title>
+  <title>TripSafe — v15.1 Cockpit local de réduction des risques</title>
   <style>:root {
   --bg: #090d1a;
   --bg2: #0f172a;
@@ -1118,6 +1118,33 @@ body.doc-compact .segmented { padding-top: 6px; }
   .session-tabs button { font-size: 12px; }
 }
 
+
+/* ===== v15.1 companion mode visibility ===== */
+.companion-entry-card {
+  margin: 12px 0 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  border-color: rgba(239,68,68,.32);
+  background: linear-gradient(135deg, rgba(239,68,68,.11), rgba(99,102,241,.08)), var(--surface);
+}
+.companion-entry-card .companion-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 48px;
+  background: rgba(239,68,68,.18);
+  border: 1px solid rgba(239,68,68,.30);
+  font-size: 24px;
+}
+.companion-entry-card h2 { margin-bottom: 4px; }
+.companion-entry-card p { font-size: 13px; line-height: 1.45; }
+.companion-page-hero { border-color: rgba(239,68,68,.34); background: linear-gradient(135deg, rgba(239,68,68,.14), rgba(99,102,241,.08)), var(--surface); }
+.companion-page-actions { display: grid; gap: 8px; margin-top: 12px; }
+.companion-page-actions .call-grid { margin: 0; }
+
 </style>
 </head>
 <body>
@@ -1146,8 +1173,8 @@ body.doc-compact .segmented { padding-top: 6px; }
     setJSON(key, value) { try { localStorage.setItem(key, JSON.stringify(value)); return true; } catch { return false; } }
   };
 
-  const DISCLAIMER_VERSION = 'v15';
-  const CONTENT_VERSION = 'v15';
+  const DISCLAIMER_VERSION = 'v15.1';
+  const CONTENT_VERSION = 'v15.1';
 
   const i18n = {
     "fr": {
@@ -1787,6 +1814,13 @@ body.doc-compact .segmented { padding-top: 6px; }
     addIntakePrimary: '+ Ajouter une prise / mélange',
     companionModeTitle: 'J’aide quelqu’un',
     companionModeBody: 'Priorité : conscience, respiration, chaleur, position sûre, informations pour les secours. En doute : 112.',
+    companionModeCta: 'Ouvrir le mode accompagnant',
+    companionModeSub: 'Accessible même sans session : vérifier l’état de la personne, noter les infos utiles, appeler si besoin.',
+    companionPageTitle: 'Mode accompagnant',
+    companionPageSub: 'Pour aider quelqu’un : rester simple, calme, concret. Ce mode ne remplace pas les secours.',
+    companionWhatToDo: 'Que faire maintenant',
+    companionNeedSession: 'Tu peux aussi démarrer un suivi si tu connais la substance et l’heure, mais en urgence la priorité reste 112.',
+    companionStartTracking: 'Démarrer un suivi pour cette personne',
     mixAlertTitle: 'Mélange actif détecté',
     mixAlertAction: 'Action prudente : simplifier le contexte, éviter les reprises, surveiller corps et respiration.',
     alcoholCumulativeTitle: 'Alcool cumulé estimé',
@@ -1838,6 +1872,13 @@ body.doc-compact .segmented { padding-top: 6px; }
     addIntakePrimary: '+ Add an intake / mix',
     companionModeTitle: 'I am helping someone',
     companionModeBody: 'Priority: consciousness, breathing, heat, safe position, information for emergency services. If unsure: 112.',
+    companionModeCta: 'Open companion mode',
+    companionModeSub: 'Accessible without a session: check the person, note useful information, call if needed.',
+    companionPageTitle: 'Companion mode',
+    companionPageSub: 'To help someone: stay simple, calm and concrete. This mode does not replace emergency services.',
+    companionWhatToDo: 'What to do now',
+    companionNeedSession: 'You can also start tracking if you know the substance and time, but in an emergency the priority remains 112.',
+    companionStartTracking: 'Start tracking for this person',
     mixAlertTitle: 'Active mix detected',
     mixAlertAction: 'Cautious action: simplify context, avoid redosing, monitor body and breathing.',
     alcoholCumulativeTitle: 'Estimated cumulative alcohol',
@@ -4456,6 +4497,17 @@ body.doc-compact .segmented { padding-top: 6px; }
     return `<article class="card-xl companion-card"><h2>${t('companionModeTitle')}</h2><p class="muted">${t('companionModeBody')}</p><ul class="companion-list"><li>${t('companionChecklist1')}</li><li>${t('companionChecklist2')}</li><li>${t('companionChecklist3')}</li><li>${t('companionChecklist4')}</li></ul><button class="danger-btn full" onclick="RDR.openSOS()">🆘 ${t('sosTitle')}</button></article>`;
   }
 
+  function renderCompanionEntryCard() {
+    return `<button class="ai-card card-xl companion-entry-card" onclick="RDR.openCompanion()" aria-label="${escapeHTML(t('companionModeCta'))}"><span class="companion-icon">🆘</span><div><h2>${t('companionModeTitle')}</h2><p class="muted">${t('companionModeSub')}</p><p class="compact-note">${t('companionModeCta')} →</p></div></button>`;
+  }
+
+  function renderCompanionPage() {
+    return `<section>
+      <article class="card-xl companion-page-hero"><button class="back-chip" onclick="RDR.go('home')">${t('libraryBack')}</button><h1>${t('companionPageTitle')}</h1><p class="muted">${t('companionPageSub')}</p></article>
+      <article class="card-xl companion-card"><h2>${t('companionWhatToDo')}</h2><ul class="companion-list"><li>${t('companionChecklist1')}</li><li>${t('companionChecklist2')}</li><li>${t('companionChecklist3')}</li><li>${t('companionChecklist4')}</li></ul><div class="companion-page-actions"><div class="call-grid"><a class="call-btn" href="tel:112">112</a><a class="call-btn" href="tel:15">15</a></div><button class="danger-btn full" onclick="RDR.openSOS()">🆘 ${t('sosTitle')}</button><button class="ghost-btn full" onclick="RDR.go('session')">${t('companionStartTracking')}</button><p class="compact-note">${t('companionNeedSession')}</p></div></article>
+    </section>`;
+  }
+
   function buildSessionAI(session) {
     const sub = substances[session.substance];
     if (!sub) return [`${archivedSessionLine()}`];
@@ -4573,6 +4625,7 @@ body.doc-compact .segmented { padding-top: 6px; }
     if (state.view === 'home') return renderHome();
     if (state.view === 'doc') return renderDoc();
     if (state.view === 'session') return renderSession();
+    if (state.view === 'companion') return renderCompanionPage();
     if (state.view === 'interactions') return renderInteractionsPage();
     if (state.view === 'history') return renderHistory();
     return renderHome();
@@ -4624,6 +4677,7 @@ body.doc-compact .segmented { padding-top: 6px; }
           </div>
         </div>
       </div>
+      ${renderCompanionEntryCard()}
       <div class="section-title"><h2>${t('exploreLearn')}</h2></div>
       <div class="learn-shortcuts">
         ${learnCards.map(c => `<button class="learn-card" onclick="RDR.selectSubstance('${c.sub}','${c.tab}')"><span>${c.icon}</span><b>${t(c.key)}</b><small>${t(c.preview)}</small></button>`).join('')}
@@ -5291,6 +5345,7 @@ body.doc-compact .segmented { padding-top: 6px; }
     const histAlerts = scanHistoryForSession(dummy);
     return `<section>
       <div class="section-title"><h1>${t('sessionTitle')}</h1><p>${t('sessionSubtitle')}</p></div>
+      ${renderCompanionEntryCard()}
       <article class="card-xl quick-start-card">
         <h2>${t('quickStart')}</h2>
         <p class="muted">${t('selectedSubstance')} <b>${escapeHTML(sub.name)}</b></p>
@@ -5489,6 +5544,7 @@ body.doc-compact .segmented { padding-top: 6px; }
     selectSubstance(id, tab = 'overview') { state.selected = id; state.docTab = tab || state.docTab; state.videoIndex = 0; state.matrixTooltip = null; state.view = 'doc'; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); },
     setDocTab(tab) { state.docTab = tab; state.videoIndex = 0; render(); },
     setSessionTab(tab) { state.sessionTab = tab; render(); },
+    openCompanion() { state.view = 'companion'; state.installOpen = false; state.matrixTooltip = null; render(); window.scrollTo({ top: 0, behavior: 'smooth' }); },
     setVideo(i) {
       state.videoIndex = Number(i) || 0;
       render();

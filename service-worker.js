@@ -1,6 +1,6 @@
-const APP_VERSION = 'v15.0.0';
+const APP_VERSION = 'v15.1.0';
 const CACHE_PREFIX = 'tripsafe-rdr-';
-const CACHE_NAME = 'tripsafe-rdr-v15-0-0';
+const CACHE_NAME = 'tripsafe-rdr-v15-1-0';
 const CORE_ASSETS = ['./', './index.html', './manifest.webmanifest', './icon.svg', './version.json', './icons/icon-192.png', './icons/icon-512.png'];
 
 self.addEventListener('install', event => {
